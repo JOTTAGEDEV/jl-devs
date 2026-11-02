@@ -1933,3 +1933,18 @@ footer {
     display: none;
   }
 }
+
+@media (min-width: 701px) {
+  .footer-bottom {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 5px 20px;
+  }
+  .footer-bottom p {
+    grid-column: 1;
+  }
+  .footer-bottom > a {
+    grid-column: 2;
+    grid-row: 1 / 3;
+  }
+}

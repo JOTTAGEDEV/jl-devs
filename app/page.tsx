@@ -27,10 +27,12 @@ const message = encodeURIComponent(
 );
 const contacts = [
   {
+    name: "JG Dev",
     number: "(48) 98805-8940",
     href: `https://wa.me/5548988058940?text=${message}`,
   },
   {
+    name: "Linhar Dev",
     number: "(48) 98876-7877",
     href: `https://wa.me/5548988767877?text=${message}`,
   },
@@ -140,23 +142,24 @@ export default function Home() {
               <Reveal delay={0.36}>
                 <div className="hero-actions">
                   <a className="button primary" href="#contato">
-                    Iniciar um projeto <ArrowUpRight size={19} />
+                    Iniciar um projeto{" "}
+                    <ArrowUpRight aria-hidden="true" size={19} />
                   </a>
                   <a className="button secondary" href="#projetos">
-                    Explorar projetos <ArrowDown size={17} />
+                    Explorar projetos <ArrowDown aria-hidden="true" size={17} />
                   </a>
                 </div>
               </Reveal>
               <Reveal delay={0.42}>
                 <div className="hero-values">
                   <span>
-                    <Zap /> Performance
+                    <Zap aria-hidden="true" /> Performance
                   </span>
                   <span>
-                    <Code2 /> Código sob medida
+                    <Code2 aria-hidden="true" /> Código sob medida
                   </span>
                   <span>
-                    <ShieldCheck /> Cuidado em cada detalhe
+                    <ShieldCheck aria-hidden="true" /> Cuidado em cada detalhe
                   </span>
                 </div>
               </Reveal>
@@ -173,19 +176,19 @@ export default function Home() {
                     <i />
                   </div>
                   <span>jl-devs / seu-próximo-projeto</span>
-                  <Command size={13} />
+                  <Command aria-hidden="true" size={13} />
                 </div>
                 <div className="editor-main">
                   <aside aria-hidden="true">
-                    <Files />
-                    <Search />
-                    <GitBranch />
+                    <Files aria-hidden="true" />
+                    <Search aria-hidden="true" />
+                    <GitBranch aria-hidden="true" />
                     <span />
-                    <Settings2 />
+                    <Settings2 aria-hidden="true" />
                   </aside>
                   <div className="editor-content">
                     <div className="editor-tab">
-                      <Code2 size={14} />
+                      <Code2 aria-hidden="true" size={14} />
                       <span>transformar.tsx</span>
                       <span className="tab-dot" />
                     </div>
@@ -224,7 +227,7 @@ export default function Home() {
                     </div>
                     <div className="terminal">
                       <span>
-                        <Terminal size={12} /> Terminal
+                        <Terminal aria-hidden="true" size={12} /> Terminal
                       </span>
                       <p>
                         <span className="lime">✓</span> Sua próxima ideia pode
@@ -236,8 +239,8 @@ export default function Home() {
                 </div>
                 <div className="editor-status">
                   <span>
-                    <GitBranch size={11} /> main <Check size={11} /> Pronto para
-                    criar
+                    <GitBranch aria-hidden="true" size={11} /> main{" "}
+                    <Check aria-hidden="true" size={11} /> Pronto para criar
                   </span>
                   <span>
                     TypeScript <span className="lime">{"{ }"}</span>
@@ -246,20 +249,20 @@ export default function Home() {
               </div>
               <div className="code-floating">
                 <span className="floating-icon">
-                  <Sparkles size={18} />
+                  <Sparkles aria-hidden="true" size={18} />
                 </span>
                 <div>
                   Uma ideia. Infinitas possibilidades.
                   <small>Vamos construir a próxima.</small>
                 </div>
-                <ArrowUpRight size={18} />
+                <ArrowUpRight aria-hidden="true" size={18} />
               </div>
             </CodeScene>
           </div>
           <div className="container hero-bottom">
             <span>Do primeiro insight à última linha de código.</span>
             <a href="#servicos">
-              Explore o que fazemos <ArrowDown size={15} />
+              Explore o que fazemos <ArrowDown aria-hidden="true" size={15} />
             </a>
           </div>
         </section>
@@ -295,7 +298,11 @@ export default function Home() {
                     <summary>
                       <div className="service-card-top">
                         <span className="icon-box">
-                          <Icon size={24} strokeWidth={1.5} />
+                          <Icon
+                            aria-hidden="true"
+                            size={24}
+                            strokeWidth={1.5}
+                          />
                         </span>
                         <span className="service-expand" aria-hidden="true">
                           +
@@ -308,7 +315,8 @@ export default function Home() {
                     <p className="service-detail">
                       {service.detail}{" "}
                       <a href="#contato">
-                        Vamos conversar <ArrowUpRight size={14} />
+                        Vamos conversar{" "}
+                        <ArrowUpRight aria-hidden="true" size={14} />
                       </a>
                     </p>
                   </details>
@@ -336,7 +344,8 @@ export default function Home() {
                   </h2>
                 </div>
                 <a className="text-link" href="#contato">
-                  Converse sobre seu projeto <ArrowUpRight size={17} />
+                  Converse sobre seu projeto{" "}
+                  <ArrowUpRight aria-hidden="true" size={17} />
                 </a>
               </div>
             </Reveal>
@@ -358,7 +367,7 @@ export default function Home() {
                         <span>
                           ODIOPAY<small>ambiente sandbox</small>
                         </span>
-                        <ShieldCheck size={24} />
+                        <ShieldCheck aria-hidden="true" size={24} />
                       </div>
                     </div>
                     <span className="art-bottom">
@@ -377,7 +386,8 @@ export default function Home() {
                       Projeto de plataforma de pagamentos em ambiente sandbox.
                     </p>
                     <a href="#contato">
-                      Conversar sobre o projeto <ArrowUpRight size={16} />
+                      Conversar sobre o projeto{" "}
+                      <ArrowUpRight aria-hidden="true" size={16} />
                     </a>
                   </div>
                 </article>
@@ -410,7 +420,8 @@ export default function Home() {
                     <span className="project-badge neutral">Projeto</span>
                     <p>Servidor e cliente de jogo personalizados.</p>
                     <a href="#contato">
-                      Conversar sobre o projeto <ArrowUpRight size={16} />
+                      Conversar sobre o projeto{" "}
+                      <ArrowUpRight aria-hidden="true" size={16} />
                     </a>
                   </div>
                 </article>
@@ -466,7 +477,7 @@ export default function Home() {
                     <p>Jotage Dev</p>
                     <span>Cofundador / Desenvolvimento digital</span>
                   </div>
-                  <Code2 className="founder-icon" />
+                  <Code2 aria-hidden="true" className="founder-icon" />
                 </article>
                 <div className="founder-connector">
                   <span />&<span />
@@ -480,7 +491,7 @@ export default function Home() {
                     <p>Cofundador</p>
                     <span>Desenvolvimento digital</span>
                   </div>
-                  <Terminal className="founder-icon" />
+                  <Terminal aria-hidden="true" className="founder-icon" />
                 </article>
                 <div className="founders-bottom">
                   <span className="lime">{"{ "}</span> Criatividade + tecnologia
@@ -559,8 +570,8 @@ export default function Home() {
                 <Reveal key={contact.number} delay={i * 0.08}>
                   <div className="contact-option">
                     <div className="contact-label">
-                      <MessageCircle size={21} />
-                      <span>WhatsApp {i + 1}</span>
+                      <MessageCircle aria-hidden="true" size={21} />
+                      <span>{contact.name}</span>
                     </div>
                     <a
                       className="contact-number"
@@ -576,7 +587,8 @@ export default function Home() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Conversar no WhatsApp <ArrowUpRight size={18} />
+                      Conversar no WhatsApp{" "}
+                      <ArrowUpRight aria-hidden="true" size={18} />
                       <span className="sr-only">
                         {" "}
                         pelo número {contact.number} (abre em nova aba)
@@ -587,8 +599,8 @@ export default function Home() {
               ))}
             </div>
             <span className="contact-note">
-              <ShieldCheck size={14} /> Contato direto com a equipe. Do seu
-              jeito.
+              <ShieldCheck aria-hidden="true" size={14} /> Contato direto com a
+              equipe. Do seu jeito.
             </span>
           </div>
         </section>
@@ -632,8 +644,9 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <MessageCircle size={15} /> {contact.number}
-                  <ArrowUpRight size={13} />
+                  <MessageCircle aria-hidden="true" size={15} />{" "}
+                  {contact.number}
+                  <ArrowUpRight aria-hidden="true" size={13} />
                 </a>
               ))}
             </div>
@@ -646,7 +659,7 @@ export default function Home() {
               Desenvolvido por <span>JG Dev</span> & <span>Linhar Dev</span>.
             </p>
             <a href="#inicio">
-              Voltar ao topo <ArrowUpRight size={14} />
+              Voltar ao topo <ArrowUpRight aria-hidden="true" size={14} />
             </a>
           </div>
         </div>

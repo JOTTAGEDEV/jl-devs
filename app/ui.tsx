@@ -80,7 +80,7 @@ export function Navigation() {
           ))}
         </nav>
         <a className="button primary nav-cta" href="#contato">
-          Iniciar um projeto <ArrowUpRight size={17} />
+          Iniciar um projeto <ArrowUpRight aria-hidden="true" size={17} />
         </a>
         <button
           ref={button}
@@ -90,7 +90,7 @@ export function Navigation() {
           aria-controls="main-navigation"
           onClick={() => setOpen(!open)}
         >
-          {open ? <X /> : <Menu />}
+          {open ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
         </button>
       </div>
     </header>
