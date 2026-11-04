@@ -20,7 +20,7 @@ import {
   ProcessTimeline,
   CurrentYear,
 } from "./ui";
-import { contacts } from "./content";
+import { contacts, websiteProjects } from "./content";
 const services = [
   {
     name: "Desenvolvimento Web",
@@ -168,12 +168,43 @@ export default function Home() {
                   em resultado.
                 </h2>
                 <p>
-                  Conheça dois projetos que fazem parte da nossa trajetória de
-                  desenvolvimento.
+                  Sites para hospedagens e negócios locais, plataformas e
+                  sistemas. Conheça alguns dos projetos que já desenvolvemos.
                 </p>
               </div>
             </Reveal>
             <div className="project-grid">
+              {websiteProjects.map((project, index) => (
+                <Reveal kind="scale" delay={index % 2 === 0 ? 0 : 0.1} key={project.name}>
+                  <article className="project-card website-project">
+                    <a
+                      className="website-preview"
+                      href={project.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${project.action}: ${project.name} (abre em nova aba)`}
+                    >
+                      <Image
+                        src={project.image}
+                        alt={project.imageAlt}
+                        width={1440}
+                        height={1000}
+                        sizes="(max-width: 700px) 100vw, 50vw"
+                      />
+                    </a>
+                    <div className="project-body">
+                      <span className="project-category">{project.category}</span>
+                      <h3>{project.name}</h3>
+                      <p>{project.description}</p>
+                      <a href={project.href} target="_blank" rel="noopener noreferrer">
+                        {project.action}
+                        <ArrowUpRight aria-hidden="true" size={18} />
+                        <span className="sr-only">: {project.name} (abre em nova aba)</span>
+                      </a>
+                    </div>
+                  </article>
+                </Reveal>
+              ))}
               <Reveal kind="scale">
                 <article className="project-card odiopay">
                   <div className="project-stage">

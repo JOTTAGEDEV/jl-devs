@@ -43,7 +43,9 @@ O build gera `out/`, pronto para hospedagem estática. Não há variáveis de am
 
 Next.js App Router, React, TypeScript, Motion e Lucide. Fontes Space Grotesk, Inter e JetBrains Mono servidas localmente. CSS próprio para reproduzir a referência sem dependências de UI desnecessárias.
 
-As artes do portfólio são composições ilustrativas em CSS. Não representam capturas dos produtos. Links de demos, repositórios e stacks dos projetos foram omitidos a pedido do responsável. Fotos e perfis dos fundadores podem ser adicionados posteriormente.
+O portfólio inclui Pousada do Dado, Residencial Pôr do Sol e Auto Serta Mecânica, com capturas reais em `public/images/projects/` e conteúdo em `app/content.ts`. As pousadas têm links para seus sites publicados; Auto Serta aponta para o repositório, pois seu antigo endereço de produção está indisponível. A captura da Auto Serta foi feita a partir do código público executado localmente. As capturas foram feitas em 04/11/2026 e convertidas para WebP.
+
+ODIOPAY e Second Server / Client mantêm composições ilustrativas em CSS, identificadas como tal, e links de contato. Links de demos, repositórios e stacks desses dois projetos continuam omitidos a pedido do responsável. Fotos e perfis dos fundadores podem ser adicionados posteriormente.
 
 A nova direção Liquid Glass foi aprovada pelo responsável. O fundo combina uma arte original da marca com refração e reflexos em WebGL, limitado a cerca de 30 quadros por segundo e resolução máxima de 1800 px. Pausa fora da tela e quando a aba está oculta. Há controle global de pausa e respeito a `prefers-reduced-motion`. Sem WebGL, a mesma arte aparece como imagem estática. Observadores, listeners, buffers, shaders e texturas são liberados no cleanup.
 
