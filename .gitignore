@@ -3,4 +3,12 @@ node_modules/
 out/
 *.tsbuildinfo
 .sites-runtime/
-.impeccable/
+.impeccable/*
+!.impeccable/config.json
+!.impeccable/design.json
+!.impeccable/surfaces/
+!.impeccable/mocks/
+assets/plates/
+.vercel/
+.env*
+!.env.example

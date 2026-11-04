@@ -1,0 +1,372 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-04T15:43:57.370237+00:00",
+  "title": "Design System: JL DEVS",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Near-black Ink",
+        "canonical": "#141315",
+        "tonalRamp": [
+          "oklch(15% 0.0015 300)",
+          "oklch(26% 0.0027 300)",
+          "oklch(38% 0.0042 300)",
+          "oklch(50% 0.0054 300)",
+          "oklch(62% 0.006 300)",
+          "oklch(74% 0.0051 300)",
+          "oklch(86% 0.003 300)",
+          "oklch(95% 0.0009 300)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Cool Muted Gray",
+        "canonical": "#585c63",
+        "tonalRamp": [
+          "oklch(15% 0.003 260)",
+          "oklch(26% 0.0054 260)",
+          "oklch(38% 0.0084 260)",
+          "oklch(50% 0.0108 260)",
+          "oklch(62% 0.012 260)",
+          "oklch(74% 0.0102 260)",
+          "oklch(86% 0.006 260)",
+          "oklch(95% 0.0018 260)"
+        ]
+      },
+      "green": {
+        "role": "primary",
+        "displayName": "Brand Green",
+        "canonical": "#a3ff3f",
+        "tonalRamp": [
+          "oklch(15% 0.045 132)",
+          "oklch(26% 0.081 132)",
+          "oklch(38% 0.126 132)",
+          "oklch(50% 0.162 132)",
+          "oklch(62% 0.18 132)",
+          "oklch(74% 0.153 132)",
+          "oklch(86% 0.09 132)",
+          "oklch(95% 0.027 132)"
+        ]
+      },
+      "green-dark": {
+        "role": "primary",
+        "displayName": "Deep Brand Green",
+        "canonical": "#356d12",
+        "tonalRamp": [
+          "oklch(15% 0.025 137)",
+          "oklch(26% 0.045 137)",
+          "oklch(38% 0.07 137)",
+          "oklch(50% 0.09 137)",
+          "oklch(62% 0.1 137)",
+          "oklch(74% 0.085 137)",
+          "oklch(86% 0.05 137)",
+          "oklch(95% 0.015 137)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Cool Paper",
+        "canonical": "#f6f8fa",
+        "tonalRamp": [
+          "oklch(15% 0.002 250)",
+          "oklch(26% 0.0036 250)",
+          "oklch(38% 0.0056 250)",
+          "oklch(50% 0.0072 250)",
+          "oklch(62% 0.008 250)",
+          "oklch(74% 0.0068 250)",
+          "oklch(86% 0.004 250)",
+          "oklch(95% 0.0012 250)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Translucent Divider",
+        "canonical": "#18251c1c",
+        "tonalRamp": [
+          "oklch(15% 0.0035 145)",
+          "oklch(26% 0.0063 145)",
+          "oklch(38% 0.0098 145)",
+          "oklch(50% 0.0126 145)",
+          "oklch(62% 0.014 145)",
+          "oklch(74% 0.0119 145)",
+          "oklch(86% 0.007 145)",
+          "oklch(95% 0.0021 145)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "oklch(15% 0.0 0)",
+          "oklch(26% 0.0 0)",
+          "oklch(38% 0.0 0)",
+          "oklch(50% 0.0 0)",
+          "oklch(62% 0 0)",
+          "oklch(74% 0.0 0)",
+          "oklch(86% 0.0 0)",
+          "oklch(95% 0.0 0)"
+        ]
+      },
+      "hero-ground": {
+        "role": "neutral",
+        "displayName": "Silver Hero Ground",
+        "canonical": "#edf3f6",
+        "tonalRamp": [
+          "oklch(15% 0.003 235)",
+          "oklch(26% 0.0054 235)",
+          "oklch(38% 0.0084 235)",
+          "oklch(50% 0.0108 235)",
+          "oklch(62% 0.012 235)",
+          "oklch(74% 0.0102 235)",
+          "oklch(86% 0.006 235)",
+          "oklch(95% 0.0018 235)"
+        ]
+      },
+      "project-ground": {
+        "role": "neutral",
+        "displayName": "Project Ground",
+        "canonical": "#eff3f5",
+        "tonalRamp": [
+          "oklch(15% 0.0022 235)",
+          "oklch(26% 0.004 235)",
+          "oklch(38% 0.0063 235)",
+          "oklch(50% 0.0081 235)",
+          "oklch(62% 0.009 235)",
+          "oklch(74% 0.0076 235)",
+          "oklch(86% 0.0045 235)",
+          "oklch(95% 0.0013 235)"
+        ]
+      },
+      "process-ground": {
+        "role": "neutral",
+        "displayName": "Process Ground",
+        "canonical": "#f7f9fb",
+        "tonalRamp": [
+          "oklch(15% 0.0018 250)",
+          "oklch(26% 0.0032 250)",
+          "oklch(38% 0.0049 250)",
+          "oklch(50% 0.0063 250)",
+          "oklch(62% 0.007 250)",
+          "oklch(74% 0.0059 250)",
+          "oklch(86% 0.0035 250)",
+          "oklch(95% 0.001 250)"
+        ]
+      },
+      "focus": {
+        "role": "primary",
+        "displayName": "Focus Green",
+        "canonical": "#487a23",
+        "tonalRamp": [
+          "oklch(15% 0.0275 136)",
+          "oklch(26% 0.0495 136)",
+          "oklch(38% 0.077 136)",
+          "oklch(50% 0.099 136)",
+          "oklch(62% 0.11 136)",
+          "oklch(74% 0.0935 136)",
+          "oklch(86% 0.055 136)",
+          "oklch(95% 0.0165 136)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Hero display",
+        "purpose": "Inter hero headline; mobile sizing is documented in Layout and Typography."
+      },
+      "headline": {
+        "displayName": "Section headline",
+        "purpose": "Large section headings on the calm reading surfaces."
+      },
+      "title": {
+        "displayName": "Content title",
+        "purpose": "Service/process titles; cards have contextual size variants."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Readable base copy."
+      },
+      "label": {
+        "displayName": "Action label",
+        "purpose": "Pill control text."
+      }
+    },
+    "shadows": [
+      {
+        "name": "glass-panel",
+        "value": "inset 0 1px 2px #fff, inset 1px 0 1px #ffffffe6, inset -1px -1px 2px #ffffffb8, 0 16px 44px #3f5c6610",
+        "purpose": "General optical glass container."
+      },
+      {
+        "name": "primary-optical-action",
+        "value": "inset 0 3px 3px #ffffffed, inset 3px 0 5px #edffd4, inset -2px -3px 3px #5b8f3c66, 0 8px 18px #6fa63c24",
+        "purpose": "Green action depth."
+      },
+      {
+        "name": "dock-selection",
+        "value": "inset 2px 3px 4px #fff, inset -2px -3px 3px #90bb6866, 0 10px 22px #75a24912",
+        "purpose": "Selected service plate."
+      },
+      {
+        "name": "project-rest",
+        "value": "0 14px 45px #32424508",
+        "purpose": "Project card ambient depth."
+      },
+      {
+        "name": "project-hover",
+        "value": "0 24px 50px #32424512",
+        "purpose": "Project card hover depth."
+      }
+    ],
+    "motion": [
+      {
+        "name": "reveal-ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "One-time viewport reveal."
+      },
+      {
+        "name": "reveal-duration",
+        "value": "0.9s",
+        "purpose": "Viewport reveal duration; initial content remains visible."
+      },
+      {
+        "name": "button-state",
+        "value": "0.3s",
+        "purpose": "Hover/active action feedback."
+      },
+      {
+        "name": "glass-reflection",
+        "value": "0.65s cubic-bezier(0.2, 0.7, 0.2, 1)",
+        "purpose": "Hover reflection sweep."
+      },
+      {
+        "name": "dock-spring",
+        "value": "stiffness: 330; damping: 30",
+        "purpose": "Selected tab plate; duration zero under pause/reduced motion."
+      },
+      {
+        "name": "dock-panel",
+        "value": "0.16s",
+        "purpose": "Service description transition."
+      },
+      {
+        "name": "process-spring",
+        "value": "stiffness: 90; damping: 25",
+        "purpose": "Scroll progress line; full line under pause/reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "large-desktop-min",
+        "value": "1700px"
+      },
+      {
+        "name": "compact-desktop-max",
+        "value": "1150px"
+      },
+      {
+        "name": "tablet-max",
+        "value": "900px"
+      },
+      {
+        "name": "mobile-max",
+        "value": "700px"
+      },
+      {
+        "name": "small-phone-max",
+        "value": "370px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary optical action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Green-transmitted pill for project and WhatsApp actions.",
+      "html": "<button class=\"ds-button\">Iniciar um projeto</button>",
+      "css": ".ds-button{display:inline-flex;align-items:center;justify-content:center;gap:15px;min-height:52px;padding:14px 26px;font:550 15px var(--font,\"Inter\",sans-serif);border:0;border-radius:99px;position:relative;overflow:hidden;cursor:pointer;text-decoration:none;transition:transform .3s,box-shadow .3s,background-color .3s;backdrop-filter:blur(8px) saturate(1.4)}.ds-button:hover{transform:translateY(-3px)}.ds-button:active{transform:translateY(0) scale(.98)}.ds-button:focus-visible{outline:3px solid #487a23;outline-offset:5px}.ds-button::after,.ds-tab[aria-selected=\"true\"]::after{content:\"\";position:absolute;inset:0;border-radius:inherit;padding:1.5px;pointer-events:none;background:linear-gradient(135deg,#fff 5%,#ffffff30 33%,#ffffffc9 56%,#fff 77%,#ffffff44);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude}.ds-button::before{content:\"\";position:absolute;inset:0;background:linear-gradient(115deg,transparent 25%,#ffffff7a 46%,transparent 65%);transform:translateX(-110%);transition:transform .65s cubic-bezier(.2,.7,.2,1);pointer-events:none}.ds-button:hover::before{transform:translateX(110%)}.ds-button{color:#12200b;background:linear-gradient(165deg,#e0ffa9b8,#a3ff3fa6 40%,#9cef54bc 72%,#e3ffb8c9);box-shadow:inset 0 3px 3px #ffffffed,inset 3px 0 5px #edffd4,inset -2px -3px 3px #5b8f3c66,0 8px 18px #6fa63c24}@media(prefers-reduced-motion:reduce){.ds-button,.ds-button::before,.ds-card,.ds-nav a::after{transition:none!important;transform:none!important}}"
+    },
+    {
+      "name": "Clear optical action",
+      "kind": "button",
+      "refersTo": "button-clear",
+      "description": "Clear glass companion action.",
+      "html": "<button class=\"ds-button\">Conheça os serviços</button>",
+      "css": ".ds-button{display:inline-flex;align-items:center;justify-content:center;gap:15px;min-height:52px;padding:14px 26px;font:550 15px var(--font,\"Inter\",sans-serif);border:0;border-radius:99px;position:relative;overflow:hidden;cursor:pointer;text-decoration:none;transition:transform .3s,box-shadow .3s,background-color .3s;backdrop-filter:blur(8px) saturate(1.4)}.ds-button:hover{transform:translateY(-3px)}.ds-button:active{transform:translateY(0) scale(.98)}.ds-button:focus-visible{outline:3px solid #487a23;outline-offset:5px}.ds-button::after,.ds-tab[aria-selected=\"true\"]::after{content:\"\";position:absolute;inset:0;border-radius:inherit;padding:1.5px;pointer-events:none;background:linear-gradient(135deg,#fff 5%,#ffffff30 33%,#ffffffc9 56%,#fff 77%,#ffffff44);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude}.ds-button::before{content:\"\";position:absolute;inset:0;background:linear-gradient(115deg,transparent 25%,#ffffff7a 46%,transparent 65%);transform:translateX(-110%);transition:transform .65s cubic-bezier(.2,.7,.2,1);pointer-events:none}.ds-button:hover::before{transform:translateX(110%)}.ds-button{color:var(--ink,#141315);background:linear-gradient(180deg,#ffffff78,#ffffff24 45%,#ffffff8c);box-shadow:inset 0 2px 2px #fffffff0,inset 1px 0 2px #fff,inset -1px -2px 3px #ffffffdc,0 7px 18px #384d5912}@media(prefers-reduced-motion:reduce){.ds-button,.ds-button::before,.ds-card,.ds-nav a::after{transition:none!important;transform:none!important}}"
+    },
+    {
+      "name": "Capsule navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Floating optical navigation links; mobile application behavior is documented in DESIGN.md.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Navegação principal\"><a href=\"#servicos\" aria-current=\"location\">Serviços</a><a href=\"#projetos\">Projetos</a><a href=\"#sobre\">Sobre</a><a href=\"#contato\">Contato</a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:16px 28px;border-radius:99px;background:linear-gradient(120deg,#ffffffba,#dce5ea70);box-shadow:inset 0 1px 2px #fff,inset 1px 0 1px #ffffffe6,inset -1px -1px 2px #ffffffb8,0 16px 44px #3f5c6610;backdrop-filter:blur(20px) saturate(1.2);font:16px var(--font,\"Inter\",sans-serif);color:var(--ink,#141315)}.ds-nav a{position:relative;color:inherit;text-decoration:none;padding:12px 0}.ds-nav a::after{content:\"\";position:absolute;left:0;right:0;bottom:4px;height:2px;background:#74b631;transform:scaleX(0);transition:transform .25s}.ds-nav a:hover::after,.ds-nav a[aria-current]::after{transform:scaleX(1)}.ds-nav a:focus-visible{outline:3px solid #487a23;outline-offset:5px}@media(max-width:500px){.ds-nav{flex-wrap:wrap;gap:16px}}@media(prefers-reduced-motion:reduce){.ds-button,.ds-button::before,.ds-card,.ds-nav a::after{transition:none!important;transform:none!important}}"
+    },
+    {
+      "name": "Selected service glass",
+      "kind": "custom",
+      "refersTo": "service-dock",
+      "description": "Static preview of the dock selection material; the application implements keyboard tabs and content switching.",
+      "html": "<div class=\"ds-tabs\" role=\"tablist\" aria-label=\"Serviços\"><button class=\"ds-tab\" role=\"tab\" aria-selected=\"true\">Web</button><button class=\"ds-tab\" role=\"tab\" aria-selected=\"false\" tabindex=\"-1\">Sistemas</button><button class=\"ds-tab\" role=\"tab\" aria-selected=\"false\" tabindex=\"-1\">Automações</button></div>",
+      "css": ".ds-tabs{display:flex;padding:3px;border-radius:28px;background:#ffffff28;box-shadow:inset 0 1px 2px #ffffffc2}.ds-tab{position:relative;border:0;border-radius:25px;padding:25px 20px;flex:1;background:transparent;color:var(--ink,#141315);font:400 15px var(--font,\"Inter\",sans-serif);cursor:pointer}.ds-tab[aria-selected=\"true\"]{font-weight:650;background:linear-gradient(155deg,#f4ffe9a1,#b5f77b57 46%,#c1fb8d9e 80%,#f0ffe8bf);box-shadow:inset 2px 3px 4px #fff,inset -2px -3px 3px #90bb6866,0 10px 22px #75a24912}.ds-tab:hover{background-color:#ffffff35}.ds-tab:focus-visible{outline:3px solid #487a23;outline-offset:5px}.ds-tab[aria-selected=\"true\"]::after{content:\"\";position:absolute;inset:0;border-radius:inherit;padding:1.5px;pointer-events:none;background:linear-gradient(135deg,#fff 5%,#ffffff30 33%,#ffffffc9 56%,#fff 77%,#ffffff44);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude}@media(prefers-reduced-motion:reduce){.ds-button,.ds-button::before,.ds-card,.ds-nav a::after{transition:none!important;transform:none!important}}"
+    },
+    {
+      "name": "Project reading card",
+      "kind": "card",
+      "refersTo": "project-card",
+      "description": "Factual project body; illustrative artwork is not a product screenshot.",
+      "html": "<article class=\"ds-card\"><h3>ODIOPAY</h3><p>Plataforma de pagamentos em ambiente sandbox.</p><a href=\"#contato\">Conversar sobre o projeto <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></a></article>",
+      "css": ".ds-card{background:#fff;color:var(--ink,#141315);border-radius:26px;padding:30px;box-shadow:0 14px 45px #32424508;font-family:var(--font,\"Inter\",sans-serif);transition:transform .45s,box-shadow .45s}.ds-card:hover{transform:translateY(-7px);box-shadow:0 24px 50px #32424512}.ds-card h3{font-size:26px;font-weight:600;letter-spacing:-.03em;margin:0}.ds-card p{font-size:14px;line-height:1.65;color:var(--muted,#585c63);margin:10px 0 0}.ds-card a{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line,#18251c1c);padding-top:22px;margin-top:24px;font-size:14px;color:inherit;text-decoration:none}.ds-card a:hover{color:#367019}.ds-card a:focus-visible{outline:3px solid #487a23;outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-button,.ds-button::before,.ds-card,.ds-nav a::after{transition:none!important;transform:none!important}}"
+    },
+    {
+      "name": "Founder identity tile",
+      "kind": "card",
+      "refersTo": "founder-card",
+      "description": "Initials and truthful founder identity in a restrained glass container.",
+      "html": "<article class=\"ds-founder\"><div class=\"ds-monogram\" aria-hidden=\"true\">JG</div><div><h3>JG Dev</h3><p>Jotage Dev</p><span>Cofundador da JL DEVS</span></div></article>",
+      "css": ".ds-founder{display:flex;align-items:center;gap:23px;padding:30px;border-radius:24px;background:linear-gradient(135deg,#f9fffcaa,#eaf1ed80);box-shadow:inset 1px 2px 4px #fff,0 14px 32px #526d5110;color:var(--ink,#141315);font-family:var(--font,\"Inter\",sans-serif)}.ds-monogram{display:flex;align-items:center;justify-content:center;width:82px;height:82px;flex-shrink:0;border-radius:25px;background:linear-gradient(140deg,#f0ffdd,#c7e1b485);box-shadow:inset 2px 2px 4px #fff,inset -2px -3px 4px #8fab7844;font-size:29px;font-weight:550;letter-spacing:-.04em;color:#39522b}.ds-founder h3{font-size:24px;font-weight:600;letter-spacing:-.03em;margin:0}.ds-founder p{font-size:14px;color:#59645c;margin:5px 0 0}.ds-founder span{display:block;font-size:11px;color:#66736a;margin-top:5px}@media(prefers-reduced-motion:reduce){.ds-button,.ds-button::before,.ds-card,.ds-nav a::after{transition:none!important;transform:none!important}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Liquid Glass / Apple minimalism",
+    "overview": "White and silver provide a calm reading ground for near-black Inter typography. Translucent controls catch bright optical rims and diffuse shadows; brand green is transmitted through the primary action, active service tab and JL sculpture. This is the user-approved Apple minimalism / Liquid Glass world.\n\nThe supplied logo remains the identity anchor. Raster artwork supplies only the environmental glass and JL sculpture; navigation, headings, service controls and contact actions are semantic interface elements. The built source is normative for measurements; the approved comp establishes material and atmosphere.",
+    "keyCharacteristics": [
+      "Airy white and silver surfaces with clear dark text.",
+      "Inter for display, body and controls.",
+      "Green transmitted through optical glass, with restrained ambient depth.",
+      "Responsive semantic controls and an optional animated scene."
+    ],
+    "rules": [
+      {
+        "name": "The Transmitted Green Rule",
+        "body": "Concentrate bright brand green in glass actions, selected controls and brand artwork; use darker greens for readable small functional details.",
+        "section": "colors"
+      },
+      {
+        "name": "The Inter Rule",
+        "body": "Use Inter for the shipped visual hierarchy, including display text. Imported Space Grotesk and JetBrains Mono are not active type roles.",
+        "section": "typography"
+      },
+      {
+        "name": "The Optical Rim Rule",
+        "body": "Glass combines a translucent gradient, bright inset edges and a soft ambient shadow. Preserve the layered rim on primary actions and the selected service tab.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do preserve Inter and the approved white, silver and green Liquid Glass material.",
+      "Do keep functional text and controls in semantic code, with a visible focus outline.",
+      "Do preserve both the reduced-motion path and the user pause control when extending animation.",
+      "Do identify project compositions as illustrative until real, authorized captures are available.",
+      "Do stack the service dock and content grids at the established mobile breakpoint."
+    ],
+    "donts": [
+      "Don't restore the rejected dark green code-editor visual world.",
+      "Don't turn illustrative project objects into evidence of an actual product interface, client result or metric.",
+      "Don't promote the project letter glyph objects or removed eyebrow tags into reusable interface primitives.",
+      "Don't place essential text or interactive controls inside the raster scene."
+    ]
+  }
+}

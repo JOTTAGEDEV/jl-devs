@@ -1,326 +1,155 @@
 import Image from "next/image";
 import {
   ArrowUpRight,
-  ArrowDown,
+  ArrowRight,
+  MessageCircle,
+  Check,
   Code2,
   Globe2,
   Layers3,
   Bot,
   Workflow,
   PenTool,
-  Command,
-  ShieldCheck,
-  Zap,
-  MessageCircle,
-  Check,
-  Terminal,
-  GitBranch,
-  Files,
-  Search,
-  Settings2,
-  Sparkles,
 } from "lucide-react";
-import { Navigation, Reveal, CodeScene, CurrentYear } from "./ui";
-
-const message = encodeURIComponent(
-  "Olá! Conheci a JL DEVS pelo site e gostaria de conversar sobre um projeto.",
-);
-const contacts = [
-  {
-    name: "JG Dev",
-    number: "(48) 98805-8940",
-    href: `https://wa.me/5548988058940?text=${message}`,
-  },
-  {
-    name: "Linhar Dev",
-    number: "(48) 98876-7877",
-    href: `https://wa.me/5548988767877?text=${message}`,
-  },
-];
+import {
+  MotionExperience,
+  Navigation,
+  LiquidBackdrop,
+  Reveal,
+  ServiceDock,
+  ProcessTimeline,
+  CurrentYear,
+} from "./ui";
+import { contacts } from "./content";
 const services = [
   {
-    icon: Globe2,
     name: "Desenvolvimento Web",
-    text: "Sua presença digital, com personalidade e performance.",
-    tags: "Sites institucionais / Landing pages",
+    icon: Globe2,
+    description: "Seu negócio merece um site que faça sentido.",
     detail:
-      "Sites responsivos, navegação intuitiva e uma experiência alinhada à identidade do seu negócio.",
+      "Sites institucionais e landing pages com identidade, navegação clara e atenção à performance em cada tela.",
   },
   {
-    icon: Code2,
     name: "Sistemas Personalizados",
-    text: "Tecnologia que se adapta à sua operação. E não o contrário.",
-    tags: "Plataformas / Sistemas web",
+    icon: Code2,
+    description: "Tecnologia que se adapta ao seu jeito de trabalhar.",
     detail:
-      "Da descoberta dos requisitos à construção de ferramentas para os processos específicos da sua equipe.",
+      "Ferramentas web construídas a partir das necessidades reais da sua operação, do planejamento à entrega.",
   },
   {
-    icon: Bot,
     name: "Inteligência Artificial",
-    text: "Novas possibilidades para desafios reais do seu negócio.",
-    tags: "Assistentes / Integrações com IA",
+    icon: Bot,
+    description: "Inteligência aplicada aos desafios do seu negócio.",
     detail:
-      "Integração de recursos de IA com propósito, considerando seus dados, necessidades e fluxos de trabalho.",
+      "Assistentes e integrações com IA pensados para o seu contexto, seus dados e seus fluxos de trabalho.",
   },
   {
-    icon: Workflow,
     name: "Automações",
-    text: "Menos tarefas repetitivas. Mais tempo para o que importa.",
-    tags: "Integrações / Fluxos inteligentes",
+    icon: Workflow,
+    description: "Menos tarefas repetitivas. Mais possibilidades.",
     detail:
-      "Conectamos ferramentas e desenhamos fluxos para reduzir o trabalho manual nas suas rotinas.",
+      "Conectamos ferramentas e organizamos fluxos para simplificar rotinas e reduzir trabalho manual.",
   },
   {
-    icon: PenTool,
     name: "UI/UX Design",
-    text: "Interfaces que fazem sentido. Experiências que conectam.",
-    tags: "Interfaces / Identidade digital",
+    icon: PenTool,
+    description: "Experiências intuitivas, em todos os detalhes.",
     detail:
-      "Organização de conteúdo, prototipação e design visual com atenção à usabilidade e à acessibilidade.",
+      "Estrutura, prototipação e interfaces que aproximam a identidade do seu negócio das necessidades de quem usa.",
   },
   {
-    icon: Layers3,
     name: "Aplicações SaaS",
-    text: "Da primeira ideia ao seu próximo produto digital.",
-    tags: "MVPs / Produtos digitais",
+    icon: Layers3,
+    description: "Uma ideia hoje. Seu próximo produto digital.",
     detail:
-      "Planejamento e desenvolvimento de aplicações web, com escopo construído a partir da proposta do seu produto.",
+      "Do primeiro escopo ao desenvolvimento da aplicação, criamos juntos uma base para o seu produto.",
   },
 ];
-const steps = [
-  {
-    title: "Descoberta",
-    text: "Ouvimos sua ideia, entendemos o negócio e identificamos o que realmente precisa ser resolvido.",
-  },
-  {
-    title: "Estratégia",
-    text: "Definimos o caminho: escopo, experiência, tecnologias e um plano claro de desenvolvimento.",
-  },
-  {
-    title: "Desenvolvimento",
-    text: "Design e código se encontram. Construímos, testamos e refinamos cada parte da solução.",
-  },
-  {
-    title: "Entrega e evolução",
-    text: "Colocamos o projeto no ar e planejamos juntos os próximos passos da sua evolução.",
-  },
-];
-
 export default function Home() {
   return (
-    <>
+    <MotionExperience>
       <a className="skip-link" href="#conteudo">
         Pular para o conteúdo
       </a>
       <Navigation />
       <main id="conteudo">
-        <section className="hero" id="inicio" aria-labelledby="hero-title">
-          <div className="hero-grid" aria-hidden="true" />
-          <div className="ambient ambient-one" aria-hidden="true" />
-          <div className="container hero-inner">
+        <div className="hero-world" id="inicio">
+          <LiquidBackdrop />
+          <section className="hero-top" aria-labelledby="hero-title">
             <div className="hero-copy">
-              <Reveal>
-                <span className="eyebrow pill">
-                  <span className="status-dot" /> Tecnologia com propósito
-                </span>
+              <Reveal kind="hero">
+                <h1 id="hero-title">
+                  Sua ideia. Nossa
+                  <br />
+                  próxima criação.
+                </h1>
               </Reveal>
-              <h1 id="hero-title">
-                <Reveal delay={0.08}>Transformamos</Reveal>
-                <Reveal delay={0.16}>
-                  <span className="lime">ideias</span> em soluções
-                </Reveal>
-                <Reveal delay={0.24}>
-                  digitais<span className="lime">.</span>
-                </Reveal>
-              </h1>
-              <Reveal delay={0.3}>
-                <p className="hero-description">
-                  Desenvolvemos sites, sistemas e experiências digitais que
-                  conectam tecnologia, criatividade e resultados.
+              <Reveal kind="hero" delay={0.12}>
+                <p>
+                  Sites, sistemas e automações.
+                  <br />
+                  Desenvolvidos para o seu negócio.
                 </p>
               </Reveal>
-              <Reveal delay={0.36}>
+              <Reveal kind="hero" delay={0.22}>
                 <div className="hero-actions">
-                  <a className="button primary" href="#contato">
-                    Iniciar um projeto{" "}
-                    <ArrowUpRight aria-hidden="true" size={19} />
+                  <a href="#contato" className="button glass-button green">
+                    <MessageCircle aria-hidden="true" />
+                    Iniciar um projeto
                   </a>
-                  <a className="button secondary" href="#projetos">
-                    Explorar projetos <ArrowDown aria-hidden="true" size={17} />
+                  <a href="#servicos" className="button glass-button clear">
+                    Conheça os serviços
                   </a>
-                </div>
-              </Reveal>
-              <Reveal delay={0.42}>
-                <div className="hero-values">
-                  <span>
-                    <Zap aria-hidden="true" /> Performance
-                  </span>
-                  <span>
-                    <Code2 aria-hidden="true" /> Código sob medida
-                  </span>
-                  <span>
-                    <ShieldCheck aria-hidden="true" /> Cuidado em cada detalhe
-                  </span>
                 </div>
               </Reveal>
             </div>
-            <CodeScene>
-              <div
-                className="editor"
-                aria-label="Exemplo ilustrativo de código da JL DEVS"
-              >
-                <div className="editor-top">
-                  <div className="traffic">
-                    <i />
-                    <i />
-                    <i />
-                  </div>
-                  <span>jl-devs / seu-próximo-projeto</span>
-                  <Command aria-hidden="true" size={13} />
-                </div>
-                <div className="editor-main">
-                  <aside aria-hidden="true">
-                    <Files aria-hidden="true" />
-                    <Search aria-hidden="true" />
-                    <GitBranch aria-hidden="true" />
-                    <span />
-                    <Settings2 aria-hidden="true" />
-                  </aside>
-                  <div className="editor-content">
-                    <div className="editor-tab">
-                      <Code2 aria-hidden="true" size={14} />
-                      <span>transformar.tsx</span>
-                      <span className="tab-dot" />
-                    </div>
-                    <div className="code">
-                      <div className="code-comment">
-                        {"// O próximo passo começa com uma ideia."}
-                      </div>
-                      <div>
-                        <b>import</b> {"{"} criatividade, tecnologia {"}"}
-                      </div>
-                      <div>
-                        <b>from</b> <em>&apos;@jl-devs/essência&apos;</em>;
-                      </div>
-                      <br />
-                      <div>
-                        <b>const</b> <strong>seuProjeto</strong> = {"{"}
-                      </div>
-                      <div>
-                        {" "}
-                        ideia: <em>&apos;Algo extraordinário&apos;</em>,
-                      </div>
-                      <div> possibilidades: [</div>
-                      <div>
-                        {" "}
-                        <em>&apos;web&apos;</em>, <em>&apos;sistemas&apos;</em>,{" "}
-                        <em>&apos;inteligência artificial&apos;</em>
-                      </div>
-                      <div> ],</div>
-                      <div> feitoCom: [criatividade, tecnologia],</div>
-                      <div>{"}"};</div>
-                      <br />
-                      <div>
-                        <b>export default</b> <strong>transformar</strong>
-                        (seuProjeto);
-                      </div>
-                    </div>
-                    <div className="terminal">
-                      <span>
-                        <Terminal aria-hidden="true" size={12} /> Terminal
-                      </span>
-                      <p>
-                        <span className="lime">✓</span> Sua próxima ideia pode
-                        começar aqui
-                        <span className="cursor" />
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="editor-status">
-                  <span>
-                    <GitBranch aria-hidden="true" size={11} /> main{" "}
-                    <Check aria-hidden="true" size={11} /> Pronto para criar
-                  </span>
-                  <span>
-                    TypeScript <span className="lime">{"{ }"}</span>
-                  </span>
-                </div>
-              </div>
-              <div className="code-floating">
-                <span className="floating-icon">
-                  <Sparkles aria-hidden="true" size={18} />
-                </span>
-                <div>
-                  Uma ideia. Infinitas possibilidades.
-                  <small>Vamos construir a próxima.</small>
-                </div>
-                <ArrowUpRight aria-hidden="true" size={18} />
-              </div>
-            </CodeScene>
-          </div>
-          <div className="container hero-bottom">
-            <span>Do primeiro insight à última linha de código.</span>
-            <a href="#servicos">
-              Explore o que fazemos <ArrowDown aria-hidden="true" size={15} />
-            </a>
-          </div>
-        </section>
+          </section>
+          <section
+            className="hero-services"
+            id="servicos"
+            aria-labelledby="services-title"
+          >
+            <h2 id="services-title">Tudo o que sua ideia precisa.</h2>
+            <ServiceDock />
+          </section>
+        </div>
         <section
-          className="section services"
-          id="servicos"
-          aria-labelledby="services-title"
+          className="section capabilities"
+          aria-labelledby="capabilities-title"
         >
           <div className="container">
             <Reveal>
-              <div className="section-heading">
-                <div>
-                  <span className="eyebrow">
-                    <span className="small-line" /> O que fazemos
-                  </span>
-                  <h2 id="services-title">
-                    Sua próxima ideia.
-                    <br />
-                    <span className="muted">Nossa próxima construção.</span>
-                  </h2>
-                </div>
-                <p>
-                  Design, desenvolvimento e tecnologia.
+              <div className="section-intro">
+                <h2 id="capabilities-title">
+                  Pensado para você.
                   <br />
-                  As peças certas para tirar seu projeto do papel.
+                  <span>Desenvolvido com propósito.</span>
+                </h2>
+                <p>
+                  Transformamos ideias em soluções digitais. Escolha o que seu
+                  negócio precisa — nós ajudamos a construir o caminho.
                 </p>
               </div>
             </Reveal>
-            <div className="service-grid">
-              {services.map(({ icon: Icon, ...service }, i) => (
-                <Reveal key={service.name} delay={(i % 3) * 0.06}>
-                  <details className="service-card">
-                    <summary>
-                      <div className="service-card-top">
-                        <span className="icon-box">
-                          <Icon
-                            aria-hidden="true"
-                            size={24}
-                            strokeWidth={1.5}
-                          />
-                        </span>
-                        <span className="service-expand" aria-hidden="true">
-                          +
-                        </span>
-                      </div>
-                      <h3>{service.name}</h3>
-                      <p>{service.text}</p>
-                      <span className="service-tags">{service.tags}</span>
-                    </summary>
-                    <p className="service-detail">
-                      {service.detail}{" "}
-                      <a href="#contato">
-                        Vamos conversar{" "}
-                        <ArrowUpRight aria-hidden="true" size={14} />
-                      </a>
-                    </p>
-                  </details>
-                </Reveal>
+            <div className="service-list">
+              {services.map(({ name, icon: Icon, description, detail }) => (
+                <details className="service-row" key={name}>
+                  <summary>
+                    <Icon aria-hidden="true" size={25} strokeWidth={1.5} />
+                    <h3>{name}</h3>
+                    <span className="service-short">{description}</span>
+                    <span className="expand-icon" aria-hidden="true">
+                      +
+                    </span>
+                  </summary>
+                  <div className="service-detail">
+                    <p>{detail}</p>
+                    <a href="#contato">
+                      Conversar sobre minha ideia{" "}
+                      <ArrowUpRight aria-hidden="true" size={17} />
+                    </a>
+                  </div>
+                </details>
               ))}
             </div>
           </div>
@@ -332,105 +161,69 @@ export default function Home() {
         >
           <div className="container">
             <Reveal>
-              <div className="section-heading">
-                <div>
-                  <span className="eyebrow">
-                    <span className="small-line" /> Ideias em desenvolvimento
-                  </span>
-                  <h2 id="projects-title">
-                    Código que se transforma
-                    <br />
-                    em <span className="lime">resultado.</span>
-                  </h2>
-                </div>
-                <a className="text-link" href="#contato">
-                  Converse sobre seu projeto{" "}
-                  <ArrowUpRight aria-hidden="true" size={17} />
-                </a>
+              <div className="section-intro">
+                <h2 id="projects-title">
+                  Código que se transforma
+                  <br />
+                  em resultado.
+                </h2>
+                <p>
+                  Conheça dois projetos que fazem parte da nossa trajetória de
+                  desenvolvimento.
+                </p>
               </div>
             </Reveal>
             <div className="project-grid">
-              <Reveal>
-                <article className="project-card">
-                  <div className="project-art payment-art">
-                    <span className="art-label">
-                      Exploração visual / JL DEVS
-                    </span>
-                    <div className="pay-word">
-                      <span className="pay-symbol">o</span> odiopay
-                      <span className="pay-dot">.</span>
+              <Reveal kind="scale">
+                <article className="project-card odiopay">
+                  <div className="project-stage">
+                    <div
+                      className="project-glass-object pay-object"
+                      aria-hidden="true"
+                    >
+                      <span>o</span>
                     </div>
-                    <div className="pay-abstract">
-                      <div className="pay-orbit" />
-                      <div className="pay-tile">
-                        <span className="pay-symbol">o</span>
-                        <span>
-                          ODIOPAY<small>ambiente sandbox</small>
-                        </span>
-                        <ShieldCheck aria-hidden="true" size={24} />
-                      </div>
-                    </div>
-                    <span className="art-bottom">
-                      Pagamentos. Código. Possibilidades.
+                    <div className="project-wordmark">odiopay.</div>
+                    <span className="concept-note">
+                      Composição visual ilustrativa
                     </span>
                   </div>
-                  <div className="project-info">
-                    <div>
-                      <span className="project-type">
-                        Plataforma de pagamentos
-                      </span>
-                      <h3>ODIOPAY</h3>
-                    </div>
-                    <span className="project-badge">Sandbox</span>
-                    <p>
-                      Projeto de plataforma de pagamentos em ambiente sandbox.
-                    </p>
+                  <div className="project-body">
+                    <h3>ODIOPAY</h3>
+                    <p>Plataforma de pagamentos em ambiente sandbox.</p>
                     <a href="#contato">
                       Conversar sobre o projeto{" "}
-                      <ArrowUpRight aria-hidden="true" size={16} />
+                      <ArrowUpRight aria-hidden="true" size={18} />
                     </a>
                   </div>
                 </article>
               </Reveal>
-              <Reveal delay={0.1}>
-                <article className="project-card">
-                  <div className="project-art game-art">
-                    <span className="art-label">
-                      Exploração visual / JL DEVS
-                    </span>
-                    <div className="game-grid" />
-                    <div className="game-emblem">
-                      <span>S</span>
-                      <span>S</span>
+              <Reveal kind="scale" delay={0.1}>
+                <article className="project-card second-server">
+                  <div className="project-stage">
+                    <div className="server-pair" aria-hidden="true">
+                      <div>S</div>
+                      <ArrowRight />
+                      <div>C</div>
                     </div>
-                    <div className="game-word">
-                      SECOND<span>SERVER / CLIENT</span>
+                    <div className="project-wordmark">
+                      Second Server / Client
                     </div>
-                    <span className="art-bottom">
-                      Dois lados. Uma experiência.
+                    <span className="concept-note">
+                      Composição visual ilustrativa
                     </span>
                   </div>
-                  <div className="project-info">
-                    <div>
-                      <span className="project-type">
-                        Desenvolvimento de jogos
-                      </span>
-                      <h3>Second Server / Client</h3>
-                    </div>
-                    <span className="project-badge neutral">Projeto</span>
+                  <div className="project-body">
+                    <h3>Second Server / Client</h3>
                     <p>Servidor e cliente de jogo personalizados.</p>
                     <a href="#contato">
                       Conversar sobre o projeto{" "}
-                      <ArrowUpRight aria-hidden="true" size={16} />
+                      <ArrowUpRight aria-hidden="true" size={18} />
                     </a>
                   </div>
                 </article>
               </Reveal>
             </div>
-            <p className="portfolio-note">
-              Composições visuais ilustrativas. Demos, repositórios e
-              tecnologias serão adicionados após confirmação dos links oficiais.
-            </p>
           </div>
         </section>
         <section
@@ -438,67 +231,63 @@ export default function Home() {
           id="sobre"
           aria-labelledby="about-title"
         >
-          <div className="container about-layout">
-            <div>
-              <Reveal>
-                <span className="eyebrow">
-                  <span className="small-line" /> Quem está por trás do código
-                </span>
+          <div className="container">
+            <Reveal>
+              <div className="about-intro">
                 <h2 id="about-title">
-                  Duas mentes.
+                  Duas mentes. Uma visão.
                   <br />
-                  Uma visão.
-                  <br />
-                  <span className="lime">Infinitas possibilidades.</span>
+                  <span>Infinitas possibilidades.</span>
                 </h2>
-                <p className="about-text">
+                <p>
                   A JL DEVS nasce da colaboração entre JG Dev e Linhar Dev.
                   Unimos criatividade, design e desenvolvimento para transformar
                   ideias em produtos digitais.
                 </p>
-                <p className="about-text muted">
-                  Cada projeto começa com uma conversa. Entendemos o que você
-                  precisa e construímos juntos o caminho até a solução.
-                </p>
-              </Reveal>
-            </div>
-            <Reveal>
-              <div className="founders">
-                <div className="founders-caption">
-                  <span className="status-dot" /> Pessoas reais. Construindo o
-                  digital.
-                </div>
-                <article className="founder">
-                  <div className="avatar">
-                    JG<span>_</span>
+              </div>
+            </Reveal>
+            <div className="founder-grid">
+              <Reveal>
+                <article className="founder glass-panel">
+                  <div className="founder-monogram" aria-hidden="true">
+                    JG
                   </div>
                   <div>
                     <h3>JG Dev</h3>
                     <p>Jotage Dev</p>
-                    <span>Cofundador / Desenvolvimento digital</span>
+                    <span>Cofundador da JL DEVS</span>
                   </div>
-                  <Code2 aria-hidden="true" className="founder-icon" />
+                  <a
+                    href={contacts[0].href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Conversar com JG Dev no WhatsApp (nova aba)"
+                  >
+                    <ArrowUpRight aria-hidden="true" />
+                  </a>
                 </article>
-                <div className="founder-connector">
-                  <span />&<span />
-                </div>
-                <article className="founder">
-                  <div className="avatar second">
-                    LD<span>_</span>
+              </Reveal>
+              <Reveal delay={0.1}>
+                <article className="founder glass-panel">
+                  <div className="founder-monogram" aria-hidden="true">
+                    LD
                   </div>
                   <div>
                     <h3>Linhar Dev</h3>
-                    <p>Cofundador</p>
+                    <p>Cofundador da JL DEVS</p>
                     <span>Desenvolvimento digital</span>
                   </div>
-                  <Terminal aria-hidden="true" className="founder-icon" />
+                  <a
+                    href={contacts[1].href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Conversar com Linhar Dev no WhatsApp (nova aba)"
+                  >
+                    <ArrowUpRight aria-hidden="true" />
+                  </a>
                 </article>
-                <div className="founders-bottom">
-                  <span className="lime">{"{ "}</span> Criatividade + tecnologia
-                  + colaboração <span className="lime">{" }"}</span>
-                </div>
-              </div>
-            </Reveal>
+              </Reveal>
+            </div>
           </div>
         </section>
         <section
@@ -508,38 +297,19 @@ export default function Home() {
         >
           <div className="container">
             <Reveal>
-              <div className="section-heading">
-                <div>
-                  <span className="eyebrow">
-                    <span className="small-line" /> Como trabalhamos
-                  </span>
-                  <h2 id="process-title">
-                    Da conversa ao código.
-                    <br />
-                    <span className="muted">Um caminho construído juntos.</span>
-                  </h2>
-                </div>
-                <p>
-                  Clareza em cada etapa.
+              <div className="section-intro">
+                <h2 id="process-title">
+                  Uma boa conversa.
                   <br />
-                  Cuidado em cada entrega.
+                  Um próximo grande projeto.
+                </h2>
+                <p>
+                  Você participa das decisões. Nós cuidamos do design e do
+                  desenvolvimento, com clareza em cada etapa.
                 </p>
               </div>
             </Reveal>
-            <ol className="process-grid">
-              {steps.map((step, i) => (
-                <li key={step.title}>
-                  <Reveal delay={i * 0.07}>
-                    <div className="step-number">
-                      0{i + 1}
-                      <span />
-                    </div>
-                    <h3>{step.title}</h3>
-                    <p>{step.text}</p>
-                  </Reveal>
-                </li>
-              ))}
-            </ol>
+            <ProcessTimeline />
           </div>
         </section>
         <section
@@ -547,31 +317,26 @@ export default function Home() {
           id="contato"
           aria-labelledby="contact-title"
         >
-          <div className="container contact-panel">
-            <div className="contact-grid" aria-hidden="true" />
-            <Reveal>
-              <span className="eyebrow">
-                <span className="status-dot" /> Sua próxima ideia começa aqui
-              </span>
-              <h2 id="contact-title">
-                Vamos transformar sua
-                <br />
-                ideia em <span className="lime">realidade?</span>
-              </h2>
-              <p>
-                Conte com a JL DEVS para desenvolver sua próxima solução
-                digital.
-                <br className="desktop-break" /> Entre em contato com nossa
-                equipe.
-              </p>
-            </Reveal>
-            <div className="contact-options">
-              {contacts.map((contact, i) => (
-                <Reveal key={contact.number} delay={i * 0.08}>
-                  <div className="contact-option">
-                    <div className="contact-label">
-                      <MessageCircle aria-hidden="true" size={21} />
-                      <span>{contact.name}</span>
+          <div className="container">
+            <div className="contact-panel glass-panel">
+              <Reveal>
+                <h2 id="contact-title">
+                  Vamos transformar sua <br />
+                  ideia em realidade?
+                </h2>
+                <p>
+                  Conte com a JL DEVS para desenvolver sua próxima solução
+                  digital.
+                  <br className="desktop-break" /> Entre em contato com nossa
+                  equipe.
+                </p>
+              </Reveal>
+              <div className="contact-grid">
+                {contacts.map((contact) => (
+                  <article className="contact-person" key={contact.name}>
+                    <div className="contact-person-title">
+                      <MessageCircle aria-hidden="true" size={24} />
+                      <h3>{contact.name}</h3>
                     </div>
                     <a
                       className="contact-number"
@@ -582,7 +347,7 @@ export default function Home() {
                       {contact.number}
                     </a>
                     <a
-                      className="button primary"
+                      className="button glass-button green"
                       href={contact.href}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -591,17 +356,17 @@ export default function Home() {
                       <ArrowUpRight aria-hidden="true" size={18} />
                       <span className="sr-only">
                         {" "}
-                        pelo número {contact.number} (abre em nova aba)
+                        com {contact.name} (abre em nova aba)
                       </span>
                     </a>
-                  </div>
-                </Reveal>
-              ))}
+                  </article>
+                ))}
+              </div>
+              <p className="contact-footnote">
+                <Check aria-hidden="true" size={16} /> Uma conversa direta com
+                quem vai desenvolver.
+              </p>
             </div>
-            <span className="contact-note">
-              <ShieldCheck aria-hidden="true" size={14} /> Contato direto com a
-              equipe. Do seu jeito.
-            </span>
           </div>
         </section>
       </main>
@@ -612,12 +377,12 @@ export default function Home() {
               <a
                 href="#inicio"
                 aria-label="JL DEVS — início"
-                className="brand footer-brand"
+                className="footer-brand"
               >
                 <Image
-                  src="/jl-devs.png"
-                  width={1942}
-                  height={809}
+                  src="/images/nav-logo.png"
+                  width={2172}
+                  height={724}
                   alt="JL DEVS"
                 />
               </a>
@@ -631,7 +396,7 @@ export default function Home() {
                 ["Sobre", "sobre"],
                 ["Contato", "contato"],
               ].map(([name, id]) => (
-                <a key={id} href={`#${id}`}>
+                <a href={`#${id}`} key={id}>
                   {name}
                 </a>
               ))}
@@ -639,31 +404,33 @@ export default function Home() {
             <div className="footer-contacts">
               {contacts.map((contact) => (
                 <a
-                  key={contact.number}
                   href={contact.href}
+                  key={contact.name}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <MessageCircle aria-hidden="true" size={15} />{" "}
+                  <span>{contact.name}</span>
                   {contact.number}
-                  <ArrowUpRight aria-hidden="true" size={13} />
+                  <ArrowUpRight aria-hidden="true" size={14} />
                 </a>
               ))}
             </div>
           </div>
           <div className="footer-bottom">
-            <p>
-              © <CurrentYear /> JL DEVS. Todos os direitos reservados.
-            </p>
-            <p>
-              Desenvolvido por <span>JG Dev</span> & <span>Linhar Dev</span>.
-            </p>
+            <div>
+              <p>
+                © <CurrentYear /> JL DEVS. Todos os direitos reservados.
+              </p>
+              <p>
+                Desenvolvido por <span>JG Dev</span> & <span>Linhar Dev</span>.
+              </p>
+            </div>
             <a href="#inicio">
-              Voltar ao topo <ArrowUpRight aria-hidden="true" size={14} />
+              Voltar ao início <ArrowRight aria-hidden="true" size={16} />
             </a>
           </div>
         </div>
       </footer>
-    </>
+    </MotionExperience>
   );
 }
