@@ -43,7 +43,7 @@ O build gera `out/`, pronto para hospedagem estática. Não há variáveis de am
 
 Next.js App Router, React, TypeScript, Motion e Lucide. Fontes Space Grotesk, Inter e JetBrains Mono servidas localmente. CSS próprio para reproduzir a referência sem dependências de UI desnecessárias.
 
-O portfólio inclui Pousada do Dado, Residencial Pôr do Sol e Auto Serta Mecânica, com capturas reais em `public/images/projects/` e conteúdo em `app/content.ts`. As pousadas têm links para seus sites publicados; Auto Serta aponta para o repositório, pois seu antigo endereço de produção está indisponível. A captura da Auto Serta foi feita a partir do código público executado localmente. As capturas foram feitas em 04/11/2026 e convertidas para WebP.
+O portfólio inclui Lucília Residencial, Pousada do Dado, Residencial Pôr do Sol e Auto Serta Mecânica, com links para seus sites publicados. As capturas dos três últimos estão em `public/images/projects/` e seus dados em `app/content.ts`. A imagem de Lucília é uma composição ilustrativa. A captura da Auto Serta foi feita a partir do código público executado localmente. As capturas foram feitas em 04/11/2026 e convertidas para WebP.
 
 ODIOPAY e Second Server / Client mantêm composições ilustrativas em CSS, identificadas como tal, e links de contato. Links de demos, repositórios e stacks desses dois projetos continuam omitidos a pedido do responsável. Fotos e perfis dos fundadores podem ser adicionados posteriormente.
 

@@ -696,6 +696,14 @@ h1 br {
 .second-server .concept-note {
   color: #4e6a59;
 }
+.lucilia .project-stage {
+  background: #f7e8dc;
+}
+.project-initial {
+  font-size: 78px;
+  font-weight: 600;
+  color: #665348;
+}
 .project-body {
   padding: 30px;
 }

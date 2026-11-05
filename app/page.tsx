@@ -174,6 +174,23 @@ export default function Home() {
               </div>
             </Reveal>
             <div className="project-grid">
+              <Reveal kind="scale">
+                <article className="project-card lucilia">
+                  <div className="project-stage">
+                    <div className="project-glass-object project-initial" aria-hidden="true">L</div>
+                    <div className="project-wordmark">Lucília Residencial</div>
+                    <span className="concept-note">Composição visual ilustrativa</span>
+                  </div>
+                  <div className="project-body">
+                    <h3>Lucília Residencial</h3>
+                    <p>Site de apartamentos por temporada na Praia da Pinheira.</p>
+                    <a href="https://lucilia-residencial-pinheira.vercel.app/" target="_blank" rel="noopener noreferrer">
+                      Visitar site <ArrowUpRight aria-hidden="true" size={18} />
+                      <span className="sr-only">: Lucília Residencial (abre em nova aba)</span>
+                    </a>
+                  </div>
+                </article>
+              </Reveal>
               {websiteProjects.map((project, index) => (
                 <Reveal kind="scale" delay={index % 2 === 0 ? 0 : 0.1} key={project.name}>
                   <article className="project-card website-project">

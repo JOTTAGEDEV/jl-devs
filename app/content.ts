@@ -42,7 +42,7 @@ export const websiteProjects = [
       "Serviços, estrutura da oficina e contato direto em uma página responsiva que aproxima a Auto Serta de quem precisa cuidar do carro.",
     image: "/images/projects/auto-serta.webp",
     imageAlt: "Página da Auto Serta Mecânica, com identidade preta e amarela e foto da oficina.",
-    href: "https://github.com/JOTTAGEDEV/auto-serta-lovable",
-    action: "Ver projeto no GitHub",
+    href: "https://autoserta.lovable.app/",
+    action: "Visitar site",
   },
 ];
