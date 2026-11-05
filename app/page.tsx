@@ -222,55 +222,6 @@ export default function Home() {
                   </article>
                 </Reveal>
               ))}
-              <Reveal kind="scale">
-                <article className="project-card odiopay">
-                  <div className="project-stage">
-                    <div
-                      className="project-glass-object pay-object"
-                      aria-hidden="true"
-                    >
-                      <span>o</span>
-                    </div>
-                    <div className="project-wordmark">odiopay.</div>
-                    <span className="concept-note">
-                      Composição visual ilustrativa
-                    </span>
-                  </div>
-                  <div className="project-body">
-                    <h3>ODIOPAY</h3>
-                    <p>Plataforma de pagamentos em ambiente sandbox.</p>
-                    <a href="#contato">
-                      Conversar sobre o projeto{" "}
-                      <ArrowUpRight aria-hidden="true" size={18} />
-                    </a>
-                  </div>
-                </article>
-              </Reveal>
-              <Reveal kind="scale" delay={0.1}>
-                <article className="project-card second-server">
-                  <div className="project-stage">
-                    <div className="server-pair" aria-hidden="true">
-                      <div>S</div>
-                      <ArrowRight />
-                      <div>C</div>
-                    </div>
-                    <div className="project-wordmark">
-                      Second Server / Client
-                    </div>
-                    <span className="concept-note">
-                      Composição visual ilustrativa
-                    </span>
-                  </div>
-                  <div className="project-body">
-                    <h3>Second Server / Client</h3>
-                    <p>Servidor e cliente de jogo personalizados.</p>
-                    <a href="#contato">
-                      Conversar sobre o projeto{" "}
-                      <ArrowUpRight aria-hidden="true" size={18} />
-                    </a>
-                  </div>
-                </article>
-              </Reveal>
             </div>
           </div>
         </section>

@@ -28,7 +28,7 @@ Nome JL DEVS e logo oficial fornecido em public/jl-devs.png. Verde da marca pres
 
 ## Evidence on Hand
 
-ODIOPAY: plataforma de pagamentos em sandbox. Second Server / Second Client: servidor e cliente de jogo personalizados. O usuário pediu que os links desses projetos não fossem adicionados agora. Não há capturas reais de produtos, métricas, clientes, depoimentos, fotos ou perfis profissionais confirmados. Não inventar essas provas.
+O usuário pediu a remoção de ODIOPAY e Second Server / Second Client do portfólio. Não inventar métricas, clientes, depoimentos, fotos ou perfis profissionais não confirmados.
 
 Em 04/11/2026, o usuário solicitou incluir os sites desenvolvidos anteriormente no portfólio e enviar ao GitHub. Foram incluídos Pousada do Dado, Residencial Pôr do Sol e Auto Serta Mecânica, com capturas reais das interfaces. As pousadas apontam para os sites publicados. Auto Serta aponta para o código público, pois seu endereço anterior está indisponível; sua captura veio da execução local desse código. Isso não implica resultados comerciais, depoimentos ou métricas confirmadas. Os dois projetos anteriores permanecem como estavam.
 
