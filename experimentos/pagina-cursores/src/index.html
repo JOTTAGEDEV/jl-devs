@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>JL Devs — sites, programas e automações</title>
+<meta name="description" content="A JL Devs faz sites, programas e automações do zero, com pagamento único e sem mensalidade. Role a página e veja o site ser construído na sua frente.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="{{IMG_MARK}}">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+/*{{CSS}}*/
+</style>
+</head>
+<body>
+
+<canvas id="gl" aria-hidden="true"></canvas>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <img class="loader__mark" src="{{IMG_CUT}}" alt="" width="760" height="487">
+  <div class="loader__bar"><i id="loaderBar"></i></div>
+</div>
+
+<div class="navwrap" id="navwrap">
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="#topo" aria-label="JL Devs, voltar ao início">
+      <img src="{{IMG_MARK}}" alt="" width="176" height="113"><span>Devs</span>
+    </a>
+    <nav class="nav__links" aria-label="Seções da página">
+      <a href="#processo">Processo</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#planos">Planos</a>
+    </nav>
+    <a class="nav__cta" href="#contato">Começar projeto</a>
+  </header>
+</div>
+
+<main id="main">
+
+  <!-- ===================== 1 · ABERTURA (estúdio) ===================== -->
+  <section class="hero" id="topo" aria-label="Apresentação">
+    <div class="hero__stage" id="heroStage">
+      <div class="bp" id="bp" aria-hidden="true"><div class="bp__grid"></div></div>
+
+      <div class="hero__logo" id="logoSlot">
+        <img class="hero__logo-img" id="logoImg" src="{{IMG_LOGO}}" alt="Logo JL. em vidro verde" width="1024" height="1024">
+      </div>
+
+      <div class="hero__copy" id="heroCopy">
+        <h1 class="hero__title" id="heroTitle">Você rola.<br>A gente constrói.</h1>
+        <p class="hero__sub" id="heroSub">Sites, programas e automações feitos sob medida pela JL Devs. Tecnologia nova, pagamento único e nenhuma mensalidade.</p>
+        <div class="hero__actions">
+          <a class="btn btn--solid" id="cta1" href="#contato"><span>Começar meu projeto</span></a>
+          <a class="btn btn--line" id="cta2" href="#processo"><span>Ver como funciona</span></a>
+        </div>
+      </div>
+
+      <div class="toolbar" id="toolbar" aria-hidden="true">
+        <span class="tool" data-tool="move"><svg viewBox="0 0 20 20"><path d="M5 3l10 6.2-4.4 1.1 2.6 5-2 1-2.6-5L5 14.6z" fill="currentColor"/></svg></span>
+        <span class="tool" data-tool="rect"><svg viewBox="0 0 20 20"><rect x="3.5" y="4.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span>
+        <span class="tool" data-tool="text"><svg viewBox="0 0 20 20"><path d="M4.5 5h11M10 5v11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+        <i class="toolbar__sep"></i>
+        <span class="toolbar__render" id="renderBtn"><b id="renderLabel">Renderizar</b></span>
+      </div>
+
+      <div class="hint" id="hint" aria-hidden="true">
+        <svg viewBox="0 0 18 28" width="18" height="28"><rect x="1" y="1" width="16" height="26" rx="8" fill="none" stroke="currentColor" stroke-width="1.6"/><rect class="hint__wheel" x="8" y="6" width="2" height="6" rx="1" fill="currentColor"/></svg>
+        <span>Role para continuar a obra</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2 · MANIFESTO (verde) ===================== -->
+  <section class="manifesto" id="manifesto" aria-label="O que a JL Devs faz">
+    <div class="manifesto__stage" id="manifestoStage">
+      <div class="manifesto__inner" id="manifestoInner">
+        <p class="manifesto__text" id="manifestoText">A JL Devs faz sites, programas e automações do zero. Sem modelo pronto, <span class="mark" id="markWords">sem mensalidade</span> e sem nada com cara de antigo.</p>
+        <svg class="manifesto__circle" id="markCircle" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true">
+          <path id="markPath" d="M96 16 C196 2 330 6 372 38 C410 68 352 104 214 110 C92 116 4 100 10 60 C15 28 92 12 232 12" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 3 · PROCESSO (preto) ===================== -->
+  <section class="process" id="processo" aria-labelledby="processoTitulo">
+    <div class="process__stage" id="processStage">
+      <div class="process__copy">
+        <h2 id="processoTitulo">Do rascunho ao ar, na sua frente.</h2>
+        <ol class="steps" id="steps">
+          <li class="step"><span class="step__n">01</span><div><h3>Rascunho</h3><p>A gente entende o que você precisa e monta a estrutura do site, bloco por bloco.</p></div></li>
+          <li class="step"><span class="step__n">02</span><div><h3>Design</h3><p>Cores, tipografia e imagens entram com a cara da sua marca.</p></div></li>
+          <li class="step"><span class="step__n">03</span><div><h3>Código</h3><p>Tudo programado do zero, com animação e carregamento rápido.</p></div></li>
+          <li class="step"><span class="step__n">04</span><div><h3>No ar</h3><p>Publicamos, testamos no computador e no celular e entregamos funcionando.</p></div></li>
+        </ol>
+      </div>
+
+      <div class="process__canvas" id="processCanvas" aria-hidden="true">
+        <div class="board" id="board">
+
+          <div class="brw" id="brw">
+            <div class="brw__bar">
+              <i></i><i></i><i></i>
+              <div class="brw__url"><svg viewBox="0 0 12 14" width="10" height="12"><path d="M3 6V4a3 3 0 016 0v2" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="1" y="6" width="10" height="7" rx="2" fill="currentColor"/></svg><span id="urlText">suamarca.com.br</span></div>
+              <div class="brw__pub" id="pubBtn">Publicar</div>
+            </div>
+            <div class="brw__view" id="brwView">
+
+              <div class="site site--wire" id="siteWire">
+                <div class="pc w-nav" id="wNav"><i class="w-dot"></i><i class="w-bar" style="width:90px"></i><span></span><i class="w-bar" style="width:54px"></i><i class="w-bar" style="width:54px"></i><i class="w-bar" style="width:54px"></i><i class="w-pill"></i></div>
+                <div class="pc w-text" id="wText"><i class="w-bar w-bar--h" style="width:86%"></i><i class="w-bar w-bar--h" style="width:64%"></i><i class="w-bar" style="width:78%;margin-top:14px"></i><i class="w-bar" style="width:58%"></i><i class="w-pill" style="margin-top:16px"></i></div>
+                <div class="pc w-img" id="wImg"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0 0L100 100M100 0L0 100" stroke="#B4BAB8" stroke-width="1" vector-effect="non-scaling-stroke"/></svg></div>
+                <div class="pc w-card" id="wC1"><i class="w-dot"></i><i class="w-bar" style="width:60%"></i><i class="w-bar" style="width:86%"></i><i class="w-bar" style="width:70%"></i></div>
+                <div class="pc w-card" id="wC2"><i class="w-dot"></i><i class="w-bar" style="width:52%"></i><i class="w-bar" style="width:82%"></i><i class="w-bar" style="width:74%"></i></div>
+                <div class="pc w-card" id="wC3"><i class="w-dot"></i><i class="w-bar" style="width:64%"></i><i class="w-bar" style="width:88%"></i><i class="w-bar" style="width:66%"></i></div>
+              </div>
+
+              <div class="site site--final" id="siteFinal">
+                <div class="f-nav"><i class="f-dot"></i><b>Sua Marca</b><span></span><em>Início</em><em>Produtos</em><em>Contato</em><u>Fale com a gente</u></div>
+                <div class="f-hero">
+                  <div class="f-hero__txt">
+                    <h4 id="fTitle">Sua marca,<br>do jeito certo.</h4>
+                    <p>Um site rápido, bonito e feito sob medida para o seu negócio.</p>
+                    <span class="f-btn" id="fBtn">Quero conhecer</span>
+                  </div>
+                  <div class="f-hero__img" id="fImg"><div class="orb" id="orb"></div><div class="orb-shadow" id="orbShadow"></div></div>
+                </div>
+                <div class="f-cards">
+                  <div class="f-card" id="fC1"><i></i><b>Entrega rápida</b><p>Seu site no ar sem enrolação.</p></div>
+                  <div class="f-card" id="fC2"><i></i><b>Feito sob medida</b><p>Nada de modelo pronto.</p></div>
+                  <div class="f-card" id="fC3"><i></i><b>Sem mensalidade</b><p>Pagou uma vez, é seu.</p></div>
+                </div>
+              </div>
+
+              <div class="brw__progress"><i id="pubBar"></i></div>
+              <div class="brw__toast" id="pubToast"><i></i>No ar</div>
+            </div>
+          </div>
+
+          <div class="palette" id="palette"><i style="--c:#000"></i><i style="--c:#90EE1F" id="swatchLime"></i><i style="--c:#fff"></i></div>
+
+          <div class="editor" id="editor">
+            <div class="editor__bar"><i></i><span>animacao.js</span></div>
+            <div class="editor__code" id="code"></div>
+            <div class="editor__perf"><span>Desempenho</span><b id="perfNum">100</b><div class="editor__meter"><i id="perfBar"></i></div></div>
+          </div>
+
+          <div class="phone" id="phone">
+            <div class="phone__screen">
+              <div class="p-nav"><i class="f-dot"></i><b>Sua Marca</b></div>
+              <div class="p-hero"><h5>Sua marca,<br>do jeito certo.</h5><div class="orb orb--sm"></div></div>
+              <div class="p-card"></div><div class="p-card"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 4 · SERVIÇOS ===================== -->
+  <section class="services" id="servicos" aria-labelledby="servicosTitulo">
+    <h2 id="servicosTitulo">O que a gente constrói</h2>
+
+    <div class="svc" id="svcSites">
+      <div class="svc__copy">
+        <h3>Sites</h3>
+        <p>Institucional, página de vendas ou loja. Com animação, 3D e carregamento rápido, do computador ao celular.</p>
+      </div>
+      <div class="svc__demo" aria-hidden="true">
+        <div class="rsp" id="rsp">
+          <div class="rsp__win" id="rspWin">
+            <div class="rsp__bar"><i></i><i></i><i></i></div>
+            <div class="rsp__page">
+              <div class="rsp__hero"><b>Sua marca</b><span></span><u></u></div>
+              <div class="rsp__tiles"><i></i><i></i><i></i></div>
+            </div>
+            <div class="rsp__grip" id="rspGrip"></div>
+          </div>
+          <div class="rsp__size" id="rspSize">1280 px</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc" id="svcProg">
+      <div class="svc__copy">
+        <h3>Programas</h3>
+        <p>Sistemas sob medida, com banco de dados e painel web. Aquela planilha que ninguém aguenta mais vira um sistema de verdade.</p>
+      </div>
+      <div class="svc__demo" aria-hidden="true">
+        <div class="xls" id="xls">
+          <div class="xls__file" id="xlsFile"><span id="xlsOld">planilha_final_v7.xlsx</span><span id="xlsNew">painel.suaempresa.com.br</span></div>
+          <div class="xls__sheet" id="xlsSheet"></div>
+          <div class="xls__kpi" id="xlsKpi1"><span>Vendas no mês</span><b>R$ 48.200</b></div>
+          <div class="xls__kpi" id="xlsKpi2"><span>Pedidos</span><b>312</b></div>
+          <div class="xls__axis" id="xlsAxis"><span>seg</span><span>ter</span><span>qua</span><span>qui</span><span>sex</span><span>sáb</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc" id="svcAuto">
+      <div class="svc__copy">
+        <h3>Automações</h3>
+        <p>Robôs e integrações que fazem o trabalho repetitivo: respondem, cadastram, avisam e geram relatório enquanto você cuida do resto.</p>
+      </div>
+      <div class="svc__demo" aria-hidden="true">
+        <div class="flow" id="flow">
+          <svg class="flow__wires" id="flowSvg"><path id="wire1"/><path id="wire2"/><path id="wire3"/><circle id="pulse1" r="5"/><circle id="pulse2" r="5"/><circle id="pulse3" r="5"/></svg>
+          <div class="node" id="nA"><i></i>Chegou um pedido</div>
+          <div class="node node--bot" id="nB"><i></i>Robô confere e separa</div>
+          <div class="node" id="nC"><i></i>Cliente avisado</div>
+          <div class="node" id="nD"><i></i>Salvo no sistema</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 5 · PLANOS ===================== -->
+  <section class="plans" id="planos" aria-labelledby="planosTitulo">
+    <div class="plans__head">
+      <h2 id="planosTitulo">Pagou uma vez. É seu.</h2>
+      <p>Nada de mensalidade. Você escolhe o plano, paga uma única vez e pronto.</p>
+    </div>
+    <div class="plans__desk" id="plansDesk">
+      <div class="printer" aria-hidden="true"><i></i></div>
+      <div class="receipts" id="receipts">
+
+        <article class="receipt" id="rc1">
+          <div class="receipt__paper">
+            <header><b>JL Devs</b><span>jldevs.online</span></header>
+            <hr>
+            <h3>Plano Básico</h3>
+            <p>O essencial para a sua marca estar no ar.</p>
+            <hr>
+            <dl>
+              <div><dt>Site</dt><dd>R$ 350,00</dd></div>
+              <div><dt>Mensalidade</dt><dd>R$ 0,00</dd></div>
+            </dl>
+            <hr>
+            <div class="receipt__total"><span>Total, uma vez só</span><strong>R$ 350</strong></div>
+          </div>
+        </article>
+
+        <article class="receipt" id="rc2">
+          <div class="receipt__paper">
+            <header><b>JL Devs</b><span>jldevs.online</span></header>
+            <hr>
+            <h3>Plano Médio</h3>
+            <p>Para quem precisa de mais do que o básico.</p>
+            <hr>
+            <dl>
+              <div><dt>Site</dt><dd>R$ 600,00</dd></div>
+              <div><dt>Mensalidade</dt><dd>R$ 0,00</dd></div>
+            </dl>
+            <hr>
+            <div class="receipt__total"><span>Total, uma vez só</span><strong>R$ 600</strong></div>
+          </div>
+        </article>
+
+        <article class="receipt" id="rc3">
+          <div class="receipt__paper">
+            <header><b>JL Devs</b><span>jldevs.online</span></header>
+            <hr>
+            <h3>Plano Completo</h3>
+            <p>Com tudo, tudo mesmo.</p>
+            <hr>
+            <dl>
+              <div><dt>Site</dt><dd>R$ 950,00</dd></div>
+              <div><dt>Modificações</dt><dd>quantas quiser</dd></div>
+              <div><dt>Quando</dt><dd>quando quiser</dd></div>
+              <div><dt>Mensalidade</dt><dd>R$ 0,00</dd></div>
+            </dl>
+            <hr>
+            <div class="receipt__total"><span>Total, uma vez só</span><strong>R$ 950</strong></div>
+            <div class="stamp" id="stamp" aria-hidden="true"><span>Pagamento</span><b>único</b></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 6 · TIME ===================== -->
+  <section class="team" id="time" aria-labelledby="timeTitulo">
+    <h2 id="timeTitulo">Quem está segurando o mouse</h2>
+    <div class="team__grid" id="teamGrid">
+      <article class="dev dev--jg" id="devJG">
+        <svg class="dev__cursor" id="bigJG" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.2 2.2 20.4 9.6l-7.2 2.3-2.5 7.3z"/></svg>
+        <div class="dev__txt">
+          <h3>JG Dev</h3>
+          <p class="dev__role">Programador</p>
+          <ul><li>Posicionou o logo</li><li>Desenhou os botões</li><li>Apertou Renderizar</li><li>Publicou o site</li></ul>
+        </div>
+      </article>
+      <article class="dev dev--lc" id="devLC">
+        <svg class="dev__cursor" id="bigLC" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.2 2.2 20.4 9.6l-7.2 2.3-2.5 7.3z"/></svg>
+        <div class="dev__txt">
+          <h3>LC Dev</h3>
+          <p class="dev__role">Programador</p>
+          <ul><li>Escreveu os títulos</li><li>Pintou o site</li><li>Trocou a planilha pelo painel</li><li>Imprimiu os recibos</li></ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===================== 7 · CHAMADA FINAL ===================== -->
+  <section class="cta" id="contato" aria-labelledby="ctaTitulo">
+    <div class="cta__inner" id="ctaInner">
+      <img class="cta__logo" id="ctaLogo" src="{{IMG_CUT}}" alt="JL." width="760" height="487" loading="lazy">
+      <h2 id="ctaTitulo">Falta um cursor nessa obra: o seu.</h2>
+      <p>Conte o que você precisa. A gente monta, você acompanha.</p>
+      <a class="btn btn--lime" id="ctaBtn" href="https://jldevs.online" target="_blank" rel="noopener"><span>Começar meu projeto</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot__brand"><img src="{{IMG_MARK}}" alt="" width="176" height="113"><span>JL Devs</span></div>
+  <p>Sites, programas e automações.</p>
+  <a href="https://jldevs.online" target="_blank" rel="noopener">jldevs.online</a>
+  <small>© 2026 JL Devs. Página montada por dois cursores e pelo seu scroll.</small>
+</footer>
+
+<!-- cursores, seleção e legenda da obra -->
+<div class="hud" id="hud" aria-hidden="true">
+  <div class="scan" id="scan"></div>
+  <div class="caret" id="caret"></div>
+  <div class="sel sel--jg" id="selJG"><i></i><i></i><i></i><i></i><b></b></div>
+  <div class="sel sel--lc" id="selLC"><i></i><i></i><i></i><i></i><b></b></div>
+  <div class="cur cur--jg" id="curJG"><svg viewBox="0 0 24 24"><path d="M3.2 2.2 20.4 9.6l-7.2 2.3-2.5 7.3z"/></svg><span class="cur__tag">JG Dev</span><i class="cur__ring"></i></div>
+  <div class="cur cur--lc" id="curLC"><svg viewBox="0 0 24 24"><path d="M3.2 2.2 20.4 9.6l-7.2 2.3-2.5 7.3z"/></svg><span class="cur__tag">LC Dev</span><i class="cur__ring"></i></div>
+  <div class="cur cur--you" id="curYou"><svg viewBox="0 0 24 24"><path d="M3.2 2.2 20.4 9.6l-7.2 2.3-2.5 7.3z"/></svg><span class="cur__tag">Você</span></div>
+</div>
+<div class="chip" id="chip" aria-hidden="true"><span class="chip__dots"><i></i><i></i></span><span class="chip__txt" id="chipTxt"></span></div>
+
+<script>
+/*{{JS}}*/
+</script>
+</body>
+</html>
