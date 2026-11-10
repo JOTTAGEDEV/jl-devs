@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Checkout — JL Devs</title>
+<meta name="description" content="Escolha o plano do seu site e pague uma única vez pelo Mercado Pago.">
+<meta name="theme-color" content="#000000">
+<link rel="canonical" href="https://jldevs.online/checkout/">
+<link rel="icon" href="{{IMG_MARK}}">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+@font-face{font-family:"Adventor";src:url(data:font/woff;base64,{{FONT_ADV_R}}) format("woff");font-weight:400;font-display:block}
+@font-face{font-family:"Adventor";src:url(data:font/woff;base64,{{FONT_ADV_B}}) format("woff");font-weight:700;font-display:block}
+@font-face{font-family:"JLMono";src:url(data:font/woff;base64,{{FONT_MONO_R}}) format("woff");font-weight:400;font-display:block}
+@font-face{font-family:"JLMono";src:url(data:font/woff;base64,{{FONT_MONO_B}}) format("woff");font-weight:700;font-display:block}
+:root{--lime:#90EE1F;--deep:#1E9E08;--font:"Adventor","Century Gothic","Avenir Next",Futura,sans-serif;--mono:"JLMono",ui-monospace,Menlo,Consolas,monospace;--pad:clamp(20px,4.4vw,72px)}
+*,*::before,*::after{box-sizing:border-box}
+html{background:#000;overflow-x:hidden;overflow-x:clip;-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;min-height:100svh;font-family:var(--font);font-size:17px;line-height:1.5;color:#fff;-webkit-font-smoothing:antialiased;background:#000 radial-gradient(rgba(255,255,255,.11) 1px,transparent 1.5px) 0 0/26px 26px}
+h1,h2,p,dl,dd,fieldset{margin:0;padding:0;border:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px;border-radius:8px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px var(--pad)}
+.brand{display:flex;align-items:center;gap:9px;font-weight:700;font-size:19px;letter-spacing:-.03em;text-decoration:none}
+.brand img{height:26px;width:auto}
+.back{font-size:15.5px;text-underline-offset:4px;color:rgba(255,255,255,.8)}
+.back:hover{color:var(--lime)}
+main{max-width:1180px;margin:0 auto;padding:clamp(18px,5vh,60px) var(--pad) 90px;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,80px);align-items:start}
+h1{font-weight:700;font-size:clamp(38px,5.4vw,78px);line-height:.96;letter-spacing:-.05em}
+.lead{margin-top:16px;color:rgba(255,255,255,.76);font-size:clamp(16.5px,1.35vw,20px);max-width:26em}
+.plans{margin-top:clamp(24px,4.4vh,44px);display:grid;gap:12px}
+.plan{position:relative;display:block;cursor:pointer}
+.plan input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.plan__box{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:6px 16px;padding:18px 20px;border-radius:20px;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.3);transition:background-color .2s,color .2s,box-shadow .2s}
+.plan__dot{width:22px;height:22px;border-radius:50%;box-shadow:inset 0 0 0 2px currentColor;display:grid;place-items:center}
+.plan__dot::after{content:"";width:10px;height:10px;border-radius:50%;background:currentColor;transform:scale(0);transition:transform .2s}
+.plan__name{font-weight:700;font-size:clamp(21px,2vw,27px);letter-spacing:-.04em;line-height:1.1}
+.plan__name small{display:inline-block;margin-left:8px;padding:5px 9px 6px;border-radius:999px;background:var(--lime);color:#000;font-size:12.5px;letter-spacing:0;vertical-align:middle}
+.plan__desc{grid-column:2;font-size:15px;color:inherit;opacity:.75;line-height:1.35}
+.plan__price{grid-row:1/3;grid-column:3;text-align:right;font-weight:700;font-size:clamp(21px,2vw,27px);letter-spacing:-.04em;white-space:nowrap}
+.plan__price s{display:block;font:400 13px/1.2 var(--mono);letter-spacing:0;opacity:.7}
+.plan:hover .plan__box{box-shadow:inset 0 0 0 1.5px #fff}
+.plan input:checked+.plan__box{background:var(--lime);color:#000;box-shadow:inset 0 0 0 1.5px var(--lime)}
+.plan input:checked+.plan__box .plan__dot::after{transform:scale(1)}
+.plan input:checked+.plan__box .plan__name small{background:#000;color:#fff}
+.plan input:focus-visible+.plan__box{outline:3px solid #fff;outline-offset:3px}
+.side{position:sticky;top:24px}
+.printer{position:relative;z-index:2;height:18px;border-radius:9px;background:#1b1c1b;box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 12px 22px -6px #000}
+.printer i{position:absolute;left:14px;right:14px;top:8px;height:3px;border-radius:2px;background:#000}
+.slot{overflow:hidden;margin:-9px 16px 0;padding-bottom:10px}
+.paper{position:relative;background:#fff;color:#000;font:400 13.5px/1.65 var(--mono);padding:30px 24px 40px;-webkit-mask:linear-gradient(#000,#000) top/100% calc(100% - 9px) no-repeat,conic-gradient(from -45deg at 50% 100%,#0000 90deg,#000 0) bottom/18px 9px repeat-x;mask:linear-gradient(#000,#000) top/100% calc(100% - 9px) no-repeat,conic-gradient(from -45deg at 50% 100%,#0000 90deg,#000 0) bottom/18px 9px repeat-x}
+.paper header{text-align:center}
+.paper header b{display:block;font:700 22px/1 var(--font);letter-spacing:-.04em}
+.paper header span{color:#4a4e4c}
+.paper hr{border:0;border-top:1.5px dashed #9aa19e;margin:16px 0}
+.paper h2{font:700 clamp(26px,2.5vw,36px)/1 var(--font);letter-spacing:-.045em}
+.paper dl div{display:flex;justify-content:space-between;gap:12px}
+.paper dd{font-weight:700;text-align:right}
+.paper .off dt,.paper .off dd{color:#12690a}
+.total{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
+.total s{color:#4a4e4c}
+.total strong{flex:1 0 100%;text-align:right;font:700 clamp(40px,4vw,56px)/1 var(--font);letter-spacing:-.05em}
+.pay{position:relative;display:flex;align-items:center;justify-content:center;margin:16px 16px 0;min-height:66px;padding:12px 26px;border-radius:999px;background:var(--lime);color:#000;font-weight:700;font-size:19px;letter-spacing:-.02em;text-decoration:none;text-align:center;transition:background-color .2s}
+.pay:hover{background:#fff}
+.note{margin:14px 16px 0;font-size:14.5px;line-height:1.45;color:rgba(255,255,255,.72)}
+.note a{color:#fff;text-underline-offset:3px}
+.chip{position:fixed;left:14px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:50;display:none;align-items:center;gap:9px;padding:10px 15px 11px;border-radius:999px;background:#000;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22);font-size:13.5px;line-height:1;pointer-events:none}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--lime)}
+.cur{position:fixed;left:0;top:0;z-index:60;opacity:0;pointer-events:none;will-change:transform}
+.cur svg{width:26px;height:26px;overflow:visible;filter:drop-shadow(0 2px 3px rgba(0,0,0,.4))}
+.cur path{stroke:#000;stroke-width:1.6;stroke-linejoin:round;paint-order:stroke}
+.cur b{position:absolute;left:18px;top:21px;font-size:12.5px;line-height:1;white-space:nowrap;padding:6px 10px 7px;border-radius:3px 12px 12px 12px;color:#000;box-shadow:0 0 0 1.5px #000}
+.cur--jg path{fill:var(--lime)}.cur--jg b{background:var(--lime)}
+.cur--lc path{fill:#fff}.cur--lc b{background:#fff}
+.js .build{opacity:0}
+.js .paper{transform:translateY(-101%)}
+.js .on{opacity:1;transform:none;transition:opacity .35s,transform .7s cubic-bezier(.2,.8,.2,1)}
+.js .paper.on{transition:transform 1s cubic-bezier(.3,.7,.2,1)}
+.js .build.from-l{transform:translateX(-40px) rotate(-2deg)}
+.js .build.from-l.on{transform:none}
+.js.anim .chip{display:flex}
+@media (max-width:860px){
+  main{grid-template-columns:1fr;padding-bottom:70px}
+  .side{position:static}
+  .slot,.pay,.note{margin-left:0;margin-right:0}
+  .plan__box{padding:16px;gap:4px 12px}
+  .chip{display:none!important}
+}
+@media (prefers-reduced-motion:reduce){.js .build,.js .paper{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/"><img src="{{IMG_MARK}}" alt="" width="176" height="113"><span>JL Devs</span></a>
+  <a class="back" href="/#planos">Voltar para o site</a>
+</header>
+<main>
+  <section>
+    <h1 class="build from-l" id="h1">Escolha o plano. Pague uma vez.</h1>
+    <p class="lead build from-l" id="lead">Sem mensalidade. O pagamento é feito na página do Mercado Pago, com Pix ou cartão.</p>
+    <fieldset class="plans">
+      <legend class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Plano</legend>
+      <label class="plan build from-l"><input type="radio" name="plano" value="basico"><span class="plan__box"><i class="plan__dot"></i><span class="plan__name">Básico</span><span class="plan__price">R$ 350</span><span class="plan__desc">O essencial para a sua marca estar no ar.</span></span></label>
+      <label class="plan build from-l"><input type="radio" name="plano" value="medio"><span class="plan__box"><i class="plan__dot"></i><span class="plan__name">Médio <small>25% OFF</small></span><span class="plan__price"><s>R$ 600</s>R$ 450</span><span class="plan__desc">Para quem precisa de mais do que o básico.</span></span></label>
+      <label class="plan build from-l"><input type="radio" name="plano" value="completo"><span class="plan__box"><i class="plan__dot"></i><span class="plan__name">Completo <small>R$ 250 OFF</small></span><span class="plan__price"><s>R$ 950</s>R$ 700</span><span class="plan__desc">Com tudo, tudo mesmo. Modificações quantas quiser, quando quiser.</span></span></label>
+    </fieldset>
+  </section>
+  <aside class="side" aria-live="polite">
+    <div class="printer" aria-hidden="true"><i></i></div>
+    <div class="slot"><div class="paper" id="paper">
+      <header><b>JL Devs</b><span>jldevs.online</span></header>
+      <hr>
+      <h2 id="rName">Plano Médio</h2>
+      <hr>
+      <dl>
+        <div><dt>Site</dt><dd id="rBase">R$ 600,00</dd></div>
+        <div class="off" id="rOffRow"><dt>Promoção</dt><dd id="rOff">- R$ 150,00</dd></div>
+        <div><dt>Mensalidade</dt><dd>R$ 0,00</dd></div>
+      </dl>
+      <hr>
+      <div class="total"><span>Total, uma vez só</span><s id="rWas">R$ 600</s><strong id="rTotal">R$ 450</strong></div>
+    </div></div>
+    <a class="pay build" id="pay" href="https://mpago.la/1w74tUu" rel="noopener">Pagar R$ 450 no Mercado Pago</a>
+    <p class="note build" id="note">Depois de pagar, chame a gente no <a id="wa" href="https://wa.me/5548988058940" target="_blank" rel="noopener noreferrer">WhatsApp (48) 98805-8940</a> para começar o site.</p>
+  </aside>
+</main>
+<div class="cur cur--jg" id="cJG" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3.2 2.2 20.4 9.6l-7.2 2.3-2.5 7.3z"/></svg><b>JG Dev</b></div>
+<div class="cur cur--lc" id="cLC" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3.2 2.2 20.4 9.6l-7.2 2.3-2.5 7.3z"/></svg><b>LC Dev</b></div>
+<div class="chip" id="chip" aria-hidden="true"><i></i><span id="chipTxt"></span></div>
+<script>
+(function () {
+  var PLANS = {
+    basico:   { name: 'Plano Básico',   base: 350, total: 350, link: 'https://mpago.la/26uo6LG' },
+    medio:    { name: 'Plano Médio',    base: 600, total: 450, link: 'https://mpago.la/1w74tUu' },
+    completo: { name: 'Plano Completo', base: 950, total: 700, link: 'https://mpago.la/1zWmS4y' }
+  };
+  var $ = function (i) { return document.getElementById(i); };
+  function brl(v, cents) { var s = v.toFixed(2).replace('.', ','); return 'R$ ' + (cents ? s : s.replace(',00', '')); }
+  var radios = [].slice.call(document.querySelectorAll('input[name=plano]'));
+  function show(key) {
+    var p = PLANS[key], off = p.base - p.total;
+    $('rName').textContent = p.name; $('rBase').textContent = brl(p.base, true);
+    $('rOffRow').style.display = off ? '' : 'none'; $('rOff').textContent = '- ' + brl(off, true);
+    $('rWas').style.display = off ? '' : 'none'; $('rWas').textContent = brl(p.base);
+    $('rTotal').textContent = brl(p.total);
+    $('pay').href = p.link; $('pay').textContent = 'Pagar ' + brl(p.total) + ' no Mercado Pago';
+    $('wa').href = 'https://wa.me/5548988058940?text=' + encodeURIComponent('Olá! Paguei o ' + p.name + ' pelo site da JL DEVS e quero começar o projeto.');
+  }
+  var q = (new URLSearchParams(location.search).get('plano') || '').toLowerCase();
+  var cur = PLANS[q] ? q : 'medio';
+  radios.forEach(function (r) { r.checked = r.value === cur; r.addEventListener('change', function () { show(r.value); poke(); }); });
+  show(cur);
+
+  /* ---- os cursores montam o checkout ---- */
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches, narrow = innerWidth < 861;
+  var builds = [].slice.call(document.querySelectorAll('.build')), paper = $('paper');
+  function reveal() { builds.forEach(function (e) { e.classList.add('on'); }); paper.classList.add('on'); }
+  if (reduced) { reveal(); return; }
+  document.documentElement.classList.add('anim');
+  function Actor(el, x, y) { this.el = el; this.x = this.tx = x; this.y = this.ty = y; }
+  var jg = new Actor($('cJG'), -60, innerHeight * .4), lc = new Actor($('cLC'), innerWidth + 60, innerHeight * .3), busy = true;
+  function at(el, fx, fy) { var r = el.getBoundingClientRect(); return [r.left + r.width * fx, r.top + r.height * fy]; }
+  function go(a, el, fx, fy) { a.target = function () { return at(el, fx, fy); }; }
+  (function loop() {
+    [jg, lc].forEach(function (a, i) {
+      if (a.target) { var p = a.target(); a.tx = p[0]; a.ty = p[1]; }
+      a.x += (a.tx - a.x) * .14; a.y += (a.ty - a.y) * .14;
+      var w = busy ? 0 : Math.sin(Date.now() / 600 + i * 2) * 3;
+      a.el.style.transform = 'translate3d(' + a.x.toFixed(1) + 'px,' + (a.y + w).toFixed(1) + 'px,0)';
+    });
+    requestAnimationFrame(loop);
+  })();
+  function say(t) { $('chipTxt').textContent = t; }
+  function wait(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+  function poke() { if (busy || narrow) return; say('LC Dev atualizou o recibo'); go(lc, paper, .78, .3); setTimeout(function () { go(lc, paper, 1.02, .55); say('Só falta o seu clique'); }, 700); }
+  var done = false;
+  function finish() { if (done) return; done = true; reveal(); busy = false; go(jg, $('pay'), 1.02, .7); go(lc, paper, 1.02, .55); say('Só falta o seu clique'); }
+  ['pointerdown', 'keydown', 'wheel', 'touchstart'].forEach(function (e) { addEventListener(e, finish, { once: true, passive: true }); });
+  (async function () {
+    jg.el.style.opacity = lc.el.style.opacity = narrow ? 0 : 1;
+    say('JG Dev está montando o checkout');
+    for (var i = 0; i < builds.length - 2 && !done; i++) { go(jg, builds[i], .12, .6); await wait(i < 2 ? 260 : 330); builds[i].classList.add('on'); }
+    if (done) return;
+    say('LC Dev está imprimindo o recibo'); go(lc, paper, .5, .1); await wait(420); paper.classList.add('on'); go(lc, paper, .6, .9); await wait(900);
+    if (done) return;
+    say('JG Dev desenhou o botão de pagar'); go(jg, $('pay'), .1, .5); await wait(420); $('pay').classList.add('on'); go(jg, $('pay'), .9, .7); await wait(420); $('note').classList.add('on');
+    finish();
+  })();
+})();
+</script>
+</body>
+</html>
