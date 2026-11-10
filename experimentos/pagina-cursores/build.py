@@ -42,11 +42,10 @@ def main():
     target.write_text(out, encoding="utf-8")
     print(f"built {target} ({target.stat().st_size/1024:.0f} KB)")
 
-    # dentro do repositório do site: publica a cópia servida em /obra/
+    # dentro do repositório do site: esta página é a home (public/index.html)
     public = ROOT.parents[1] / "public"
     if public.is_dir():
-        served = public / "obra" / "index.html"
-        served.parent.mkdir(exist_ok=True)
+        served = public / "index.html"
         served.write_text(out, encoding="utf-8")
         print(f"copied to {served}")
 

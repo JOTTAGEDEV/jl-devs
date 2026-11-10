@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import {
   ArrowUpRight,
@@ -19,8 +20,13 @@ import {
   ServiceDock,
   ProcessTimeline,
   CurrentYear,
-} from "./ui";
-import { contacts, websiteProjects } from "./content";
+} from "../ui";
+import { contacts, websiteProjects } from "../content";
+
+export const metadata: Metadata = {
+  title: "JL DEVS — versão anterior do site",
+  robots: { index: false, follow: true },
+};
 const services = [
   {
     name: "Desenvolvimento Web",
