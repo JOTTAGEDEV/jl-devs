@@ -42,6 +42,17 @@ def main():
     target.write_text(out, encoding="utf-8")
     print(f"built {target} ({target.stat().st_size/1024:.0f} KB)")
 
+    # checkout: página própria, com as mesmas fontes
+    ck = (SRC / "checkout.html").read_text(encoding="utf-8")
+    for k, v in tokens.items():
+        ck = ck.replace("{{" + k + "}}", v)
+    (DIST / "checkout.html").write_text(ck, encoding="utf-8")
+    public = ROOT.parents[1] / "public"
+    if public.is_dir():
+        (public / "checkout").mkdir(exist_ok=True)
+        (public / "checkout" / "index.html").write_text(ck, encoding="utf-8")
+        print("checkout copied")
+
     # dentro do repositório do site: esta página é a home (public/index.html)
     public = ROOT.parents[1] / "public"
     if public.is_dir():
