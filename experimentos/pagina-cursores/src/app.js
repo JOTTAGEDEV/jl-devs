@@ -349,9 +349,12 @@
     Array.prototype.slice.call(hero.title.childNodes).forEach(function (n) {
       if (n.nodeType === 3) {
         var frag = D.createDocumentFragment();
+        var word = null;                                   // letras agrupadas por palavra: a linha nunca quebra no meio de uma
         n.nodeValue.split('').forEach(function (c) {
           var s = D.createElement('span'); s.className = 'ch'; s.textContent = c; s.setAttribute('aria-hidden', 'true');
-          frag.appendChild(s); out.push(s);
+          if (c === ' ') { word = null; frag.appendChild(s); }
+          else { if (!word) { word = D.createElement('span'); word.className = 'wd'; frag.appendChild(word); } word.appendChild(s); }
+          out.push(s);
         });
         label.push(n.nodeValue);
         hero.title.replaceChild(frag, n);

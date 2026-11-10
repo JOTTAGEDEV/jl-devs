@@ -34,7 +34,8 @@ O build gera `out/`, pronto para hospedagem estática. Não há variáveis de am
 
 ## Estrutura
 
-- `app/page.tsx`: conteúdo, serviços, projetos e contatos.
+- `public/index.html`: a home do site. É gerada por `experimentos/pagina-cursores/build.py`; não edite direto.
+- `app/classico/page.tsx`: a versão anterior do site (conteúdo, serviços, projetos e contatos), servida em `/classico`.
 - `app/ui.tsx`: menu móvel, seletor acessível de serviços, transições, controle de movimento e ano atual.
 - `app/liquid-scene.tsx`: fundo Liquid Glass com shader WebGL e fallback de imagem.
 - `app/content.ts`: os contatos oficiais e a mensagem de WhatsApp.
