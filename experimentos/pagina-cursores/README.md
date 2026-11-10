@@ -10,9 +10,9 @@ A versão anterior do site continua em `/classico`, e `/obra/` redireciona para 
 
 ## Checkout
 
-`src/checkout.html` vira `public/checkout/index.html` (`/checkout/`). A pessoa escolhe o plano, o recibo se atualiza e o botão abre o link de pagamento do Mercado Pago daquele plano.
-Os links e os preços ficam no objeto `PLANS`, no fim de `src/checkout.html`. Se mudar um preço, troque também o link no Mercado Pago e os recibos de `src/index.html`.
-Os botões "Quero este" da home levam para `/checkout/?plano=basico|medio|completo`.
+`src/checkout.html` vira `public/checkout/index.html` (`/checkout`). A pessoa escolhe o plano, informa nome e WhatsApp, o pedido é gravado por `POST /api/pedido` e só então o botão abre o link de pagamento do Mercado Pago daquele plano.
+Os links e os preços ficam no objeto `PLANS`, no fim de `src/checkout.html`. Se mudar um preço, troque também o link no Mercado Pago, os recibos de `src/index.html` e `app/_lib/planos.ts`.
+Os botões "Quero este" da home levam para `/checkout?plano=basico|medio|completo`.
 
 ## Alterar
 
