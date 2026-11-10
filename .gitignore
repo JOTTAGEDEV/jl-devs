@@ -12,3 +12,6 @@ assets/plates/
 .vercel/
 .env*
 !.env.example
+
+# página de teste: o arquivo servido fica em public/obra/
+experimentos/pagina-cursores/dist/
