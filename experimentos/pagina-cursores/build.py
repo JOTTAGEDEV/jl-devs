@@ -42,6 +42,14 @@ def main():
     target.write_text(out, encoding="utf-8")
     print(f"built {target} ({target.stat().st_size/1024:.0f} KB)")
 
+    # dentro do repositório do site: publica a cópia servida em /obra/
+    public = ROOT.parents[1] / "public"
+    if public.is_dir():
+        served = public / "obra" / "index.html"
+        served.parent.mkdir(exist_ok=True)
+        served.write_text(out, encoding="utf-8")
+        print(f"copied to {served}")
+
 
 if __name__ == "__main__":
     main()

@@ -5,18 +5,20 @@ Fica tudo em um único arquivo HTML, sem dependências externas (fontes, imagens
 
 ## Ver
 
-Abra `dist/jl-devs.html` no navegador.
+No site ela é servida em `/obra/` (arquivo `public/obra/index.html`). Também abre direto no navegador, sem servidor.
 
 ## Alterar
 
 - `src/index.html`, `src/styles.css`, `src/app.js`: marcação, estilos e animações.
 - `src/studio.glsl` e `src/aurora.glsl`: shaders WebGL do logo de vidro e das fitas de luz.
-- `python3 build.py` junta tudo de novo em `dist/jl-devs.html`.
+- `python3 build.py` junta tudo em `dist/jl-devs.html` e copia para `public/obra/index.html`.
 - `work/assets.py` recria as imagens de `assets/` a partir de `work/logo-src.png`.
 - `work/fonts.py` recria `work/fonts.json` (as fontes embutidas).
-- `qa/*.js` tiram screenshots com Playwright (`node qa/quick.js`).
+- `qa/*.js` conferem a página com Playwright: `quick.js` e `contato.js` tiram screenshots; `cursores.js` confere a posição dos cursores no fim da página.
+
+Os contatos de WhatsApp são os mesmos de `app/content.ts`.
 
 ## Estado
 
-Primeira versão completa. Conferida no desktop (1440×900, Chromium) do início ao fim, sem erros de JavaScript.
-Ainda falta conferir no celular e fazer o acabamento fino. Os textos são rascunho.
+Primeira versão completa. Conferida no desktop (1440×900, Chromium) do início ao fim e, no celular (390×844), o time, a chamada final e o rodapé.
+O restante da página ainda não foi conferido no celular. Os textos são rascunho.

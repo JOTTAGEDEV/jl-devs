@@ -68,12 +68,12 @@
     this.clickAt = -1e9; this.seed = seed; this.selA = 0;
   }
   Actor.prototype.aim = function (x, y, down, vis) {
-    this.tx = x; this.ty = y;
+    if (x === x && y === y) { this.tx = x; this.ty = y; }      // ignora NaN
     if (down && !this.down) this.clickAt = S.t;
     this.down = !!down; this.tvis = vis === undefined ? 1 : vis;
   };
   Actor.prototype.step = function (dt) {
-    if (!this.placed) { this.x = this.tx; this.y = this.ty; this.placed = true; }
+    if (!this.placed || this.x !== this.x || this.y !== this.y) { this.x = this.tx; this.y = this.ty; this.placed = true; }
     var k = 1 - Math.exp(-dt * 0.03);
     this.x += (this.tx - this.x) * k; this.y += (this.ty - this.y) * k;
     this.dn += ((this.down ? 1 : 0) - this.dn) * (1 - Math.exp(-dt * 0.03));
@@ -937,11 +937,11 @@
   /* ======================================================================
      6 · Time: os cursores assinam a obra
      ====================================================================== */
-  var tm = { grid: id('teamGrid'), big: { jg: id('bigJG'), lc: id('bigLC') } };
+  var tm = { grid: id('teamGrid'), big: { jg: id('bigJG'), lc: id('bigLC') }, dev: { jg: id('devJG'), lc: id('devLC') } };
   function dock(who) {
     return move(who, function (u, sc) {
-      var r = sc.rect(tm.big[who]);
-      return { x: r.x + r.w * 0.86, y: r.y + r.h * 0.82 };
+      var r = frameRect(tm.dev[who]), g = G.team;        // tm.big é <svg> (sem offsetLeft/Top): a caixa vem do cartão + medidas de layout
+      return { x: r.left + g.bw * 0.06, y: r.top + g.pad + g.bw * 1.02 };   // logo abaixo do cursor grande, sem cobrir o texto
     }, 0.42, 1, {});
   }
   var team = new Scene({
@@ -968,13 +968,17 @@
   /* ======================================================================
      7 · Chamada final: aurora verde, os dois esperando o terceiro cursor
      ====================================================================== */
-  var ct = { sec: id('contato'), inner: id('ctaInner'), btn: id('ctaBtn'), logo: id('ctaLogo'), hover: 0, hot: false };
-  ct.btn.addEventListener('pointerenter', function () { ct.hot = true; });
-  ct.btn.addEventListener('pointerleave', function () { ct.hot = false; });
+  var ct = { sec: id('contato'), inner: id('ctaInner'), btn: id('ctaBtn'), btn2: id('ctaBtn2'), logo: id('ctaLogo'), hover: 0, hot: false };
+  [ct.btn, ct.btn2].forEach(function (b) {
+    b.addEventListener('pointerenter', function () { ct.hot = true; });
+    b.addEventListener('pointerleave', function () { ct.hot = false; });
+  });
   function wait(who, side) {
     return move(who, function (u, sc) {
-      var r = sc.rect(ct.btn), hop = Math.abs(Math.sin(S.t * 0.004 + (side > 0 ? 1.3 : 0))) * (6 + ct.hover * 12);
-      return { x: side < 0 ? r.x - 30 : r.x + r.w + 8, y: r.y + r.h * 0.5 - hop };
+      var r = sc.rect(side < 0 ? ct.btn : ct.btn2), hop = Math.abs(Math.sin(S.t * 0.004 + (side > 0 ? 1.3 : 0))) * (6 + ct.hover * 12);
+      /* empilhados (celular): os dois esperam embaixo dos botões */
+      if (S.vw < 760) { var r2 = sc.rect(ct.btn2); return { x: side < 0 ? r2.x + 8 : r2.x + r2.w - 92, y: r2.y + r2.h + 14 + hop * 0.6 }; }
+      return { x: side < 0 ? r.x - 88 : r.x + r.w + 10, y: r.y + r.h * 0.5 - 8 - hop };
     }, 0.5, 1, {});
   }
   var cta = new Scene({
@@ -982,7 +986,8 @@
     progress: function () {
       var g = G.cta;
       if (!g || S.ry + S.vh < g.top - S.vh * 0.1) return null;
-      return clamp((S.sy + S.vh - g.top) / (S.vh * 0.9));
+      /* só assume os cursores quando a chamada já ocupa a parte de baixo da tela: antes disso eles terminam de assinar no time */
+      return clamp((S.sy + S.vh * 0.62 - g.top) / (S.vh * 0.55));
     },
     entry: function (who) { return who === 'jg' ? { x: -60, y: S.vh * 0.5 } : { x: S.vw + 60, y: S.vh * 0.5 }; },
     lead: 0.45,
@@ -1008,7 +1013,7 @@
     G.proc = { top: docTop(pr.sec), h: pr.sec.offsetHeight, vh: pr.stage.offsetHeight };
     G.svc = svcDemos.map(function (d) { return { top: docTop(d), h: d.offsetHeight }; });
     G.plans = { top: docTop(pl.desk), h: pl.desk.offsetHeight };
-    G.team = { top: docTop(tm.grid), h: tm.grid.offsetHeight };
+    G.team = { top: docTop(tm.grid), h: tm.grid.offsetHeight, pad: parseFloat(getComputedStyle(tm.dev.jg).paddingTop) || 0, bw: parseFloat(getComputedStyle(tm.big.jg).width) || 120 };
     G.cta = { top: docTop(ct.sec), h: ct.sec.offsetHeight };
     // recibos: lado a lado (JG puxa o terceiro junto) ou empilhados (um depois do outro)
     pl.pull3.t0 = G.narrow ? 0.62 : 0.2; pl.pull3.t1 = G.narrow ? 0.82 : 0.5;
