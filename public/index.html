@@ -51,7 +51,7 @@ h1,h2,h3,h4,h5,p,ul,ol,dl,dd{margin:0}
 ul,ol{padding:0;list-style:none}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--deep);outline-offset:3px;border-radius:6px}
-.process :focus-visible,.services :focus-visible,.plans :focus-visible,.team :focus-visible,.cta :focus-visible,.foot :focus-visible,.nav :focus-visible{outline-color:var(--lime)}
+.process :focus-visible,.services :focus-visible,.pous :focus-visible,.plans :focus-visible,.team :focus-visible,.cta :focus-visible,.foot :focus-visible,.nav :focus-visible{outline-color:var(--lime)}
 ::selection{background:var(--lime);color:#000}
 
 #gl{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:block;background:var(--studio)}
@@ -303,6 +303,20 @@ main{position:relative;z-index:1}
 /* ==========================================================================
    5 · PLANOS
    ========================================================================== */
+/* pousadas: lista de sites já entregues */
+.pous{position:relative;background:#000;color:#fff;padding:clamp(40px,8vh,90px) var(--pad) clamp(40px,8vh,90px)}
+.pous>h2{font-weight:700;font-size:var(--h2);line-height:.98;letter-spacing:-.045em;max-width:1240px;margin:0 auto}
+.pous__intro{max-width:1240px;margin:clamp(14px,2.4vh,24px) auto clamp(28px,5vh,56px);font-size:clamp(16px,1.3vw,20px);color:rgba(255,255,255,.7)}
+.pous__list{max-width:1240px;margin:0 auto;list-style:none;padding:0;border-bottom:1px solid rgba(255,255,255,.18)}
+.pous__row{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) minmax(0,1.3fr) auto;gap:8px clamp(14px,2.4vw,36px);align-items:baseline;padding:clamp(20px,3.6vh,36px) 0;border-top:1px solid rgba(255,255,255,.18);color:#fff;text-decoration:none;transition:color .2s}
+.pous__name{font-weight:700;font-size:clamp(26px,3.2vw,52px);line-height:1;letter-spacing:-.045em}
+.pous__where{font-size:clamp(15px,1.2vw,18px);color:rgba(255,255,255,.7)}
+.pous__url{font-family:var(--mono);font-size:clamp(13px,1vw,15px);color:rgba(255,255,255,.6);overflow-wrap:anywhere}
+.pous__go{font-weight:700;font-size:clamp(26px,2.6vw,40px);line-height:1;transition:transform .25s,color .2s}
+.pous__row:hover .pous__name,.pous__row:hover .pous__go{color:var(--lime)}
+.pous__row:hover .pous__go{transform:translate(4px,-4px)}
+.pous__row:focus-visible{outline:2px solid var(--lime);outline-offset:4px}
+
 .plans{position:relative;background:#000;color:#fff;padding:clamp(70px,13vh,150px) var(--pad) clamp(70px,12vh,140px)}
 .plans__head{max-width:1240px;margin:0 auto clamp(34px,7vh,76px)}
 .plans__head h2{font-weight:700;font-size:var(--h2);line-height:.98;letter-spacing:-.045em}
@@ -458,6 +472,10 @@ main{position:relative;z-index:1}
   .receipts{grid-template-columns:1fr;gap:0;max-width:400px;margin-left:auto;margin-right:auto;padding:0 14px}
   .receipt+.receipt{margin-top:22px}
   .team__grid{grid-template-columns:1fr}
+  .pous__row{grid-template-columns:minmax(0,1fr) auto;row-gap:6px}
+  .pous__name{grid-column:1}
+  .pous__go{grid-column:2;grid-row:1}
+  .pous__where,.pous__url{grid-column:1 / -1}
   .foot{grid-template-columns:1fr;gap:10px}
   .foot__links{justify-content:flex-start;flex-direction:column;gap:8px}
   .btn--wa{min-height:64px;padding:11px 28px}
@@ -503,6 +521,7 @@ main{position:relative;z-index:1}
     <nav class="nav__links" aria-label="Seções da página">
       <a href="#processo">Processo</a>
       <a href="#servicos">Serviços</a>
+      <a href="#pousadas">Pousadas</a>
       <a href="#planos">Planos</a>
     </nav>
     <a class="nav__cta" href="#contato">Começar projeto</a>
@@ -687,6 +706,44 @@ main{position:relative;z-index:1}
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- ===================== 4b · POUSADAS (sites já entregues) ===================== -->
+  <section class="pous" id="pousadas" aria-labelledby="pousadasTitulo">
+    <h2 id="pousadasTitulo">Pousadas que a gente já colocou no ar.</h2>
+    <p class="pous__intro">Sites de hospedagem feitos pela JL Devs. Clique e visite.</p>
+    <ul class="pous__list">
+      <li><a class="pous__row" href="https://pousadadodado.com/" target="_blank" rel="noopener noreferrer" aria-label="Pousada do Dado, Ponta do Papagaio. Visitar site (abre em nova aba)">
+        <span class="pous__name">Pousada do Dado</span>
+        <span class="pous__where">Ponta do Papagaio</span>
+        <span class="pous__url">pousadadodado.com</span>
+        <span class="pous__go" aria-hidden="true">↗</span>
+      </a></li>
+      <li><a class="pous__row" href="https://pousadapordosol.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Residencial Pôr do Sol, Praia da Pinheira. Visitar site (abre em nova aba)">
+        <span class="pous__name">Residencial Pôr do Sol</span>
+        <span class="pous__where">Praia da Pinheira</span>
+        <span class="pous__url">pousadapordosol.vercel.app</span>
+        <span class="pous__go" aria-hidden="true">↗</span>
+      </a></li>
+      <li><a class="pous__row" href="https://lucilia-residencial-pinheira.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Lucília Residencial, Praia da Pinheira. Visitar site (abre em nova aba)">
+        <span class="pous__name">Lucília Residencial</span>
+        <span class="pous__where">Praia da Pinheira</span>
+        <span class="pous__url">lucilia-residencial-pinheira.vercel.app</span>
+        <span class="pous__go" aria-hidden="true">↗</span>
+      </a></li>
+      <li><a class="pous__row" href="https://residencial-nosso-sonho.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Residencial Nosso Sonho, Praia do Sonho. Visitar site (abre em nova aba)">
+        <span class="pous__name">Residencial Nosso Sonho</span>
+        <span class="pous__where">Praia do Sonho</span>
+        <span class="pous__url">residencial-nosso-sonho.vercel.app</span>
+        <span class="pous__go" aria-hidden="true">↗</span>
+      </a></li>
+      <li><a class="pous__row" href="https://casa-cafe-no-bule.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Casa Café no Bule, Santo Amaro da Imperatriz. Visitar site (abre em nova aba)">
+        <span class="pous__name">Casa Café no Bule</span>
+        <span class="pous__where">Santo Amaro da Imperatriz</span>
+        <span class="pous__url">casa-cafe-no-bule.vercel.app</span>
+        <span class="pous__go" aria-hidden="true">↗</span>
+      </a></li>
+    </ul>
   </section>
 
   <!-- ===================== 5 · PLANOS ===================== -->

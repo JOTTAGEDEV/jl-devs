@@ -8,6 +8,18 @@
         "value": "inter",
         "createdAt": "2026-11-02T23:31:49.817Z",
         "reason": "Agent: Inter was explicitly requested in the supplied JL DEVS brief alongside Space Grotesk and JetBrains Mono"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "adventor",
+        "createdAt": "2026-11-12T04:41:35.583Z",
+        "reason": "pre-existing @font-face of the JL Devs brand font, embedded by build.py; untouched by the pousadas change"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "jlmono",
+        "createdAt": "2026-11-12T04:41:35.803Z",
+        "reason": "pre-existing @font-face of the brand mono font, embedded by build.py; untouched by the pousadas change"
       }
     ]
   }
