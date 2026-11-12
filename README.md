@@ -34,6 +34,10 @@ O build gera `out/`, pronto para hospedagem estática. Não há variáveis de am
 
 ## Estrutura
 
+- `app/api/pedido/route.ts`: grava no banco quem preencheu o checkout (nome, WhatsApp e plano).
+- `app/painel/route.ts`: lista dos pedidos, em `/painel`, protegida por usuário e senha.
+- `app/_lib/`: acesso ao banco (`db.ts`) e tabela de planos (`planos.ts`).
+- `next.config.ts`: serve `public/index.html` em `/` e `public/checkout/index.html` em `/checkout`.
 - `public/index.html`: a home do site. É gerada por `experimentos/pagina-cursores/build.py`; não edite direto.
 - `app/classico/page.tsx`: a versão anterior do site (conteúdo, serviços, projetos e contatos), servida em `/classico`.
 - `app/ui.tsx`: menu móvel, seletor acessível de serviços, transições, controle de movimento e ano atual.
@@ -51,3 +55,13 @@ Fotos e perfis dos fundadores podem ser adicionados posteriormente.
 A nova direção Liquid Glass foi aprovada pelo responsável. O fundo combina uma arte original da marca com refração e reflexos em WebGL, limitado a cerca de 30 quadros por segundo e resolução máxima de 1800 px. Pausa fora da tela e quando a aba está oculta. Há controle global de pausa e respeito a `prefers-reduced-motion`. Sem WebGL, a mesma arte aparece como imagem estática. Observadores, listeners, buffers, shaders e texturas são liberados no cleanup.
 
 Copyright e créditos no rodapé com ano calculado automaticamente. Para alterar contatos, edite a lista `contacts` em `app/content.ts`. As artes produzidas com ImageGen ficam em `public/images/`; sua proveniência está nos metadados PNG ou no sidecar do WebP.
+
+## Pedidos e painel
+
+O checkout pede nome e WhatsApp antes do pagamento e grava o pedido em um banco Postgres. Nada sensível fica no código: tudo vem de variáveis de ambiente do projeto na Vercel.
+
+1. Na Vercel, abra o projeto, vá em **Storage**, crie um banco **Neon (Postgres)** e ligue ao projeto. A Vercel cria a variável `DATABASE_URL` sozinha.
+2. Em **Settings → Environment Variables**, crie `PAINEL_SENHA` com uma senha forte. O usuário é `jl`; para trocar, crie também `PAINEL_USUARIO`.
+3. Publique de novo (Redeploy) para as variáveis valerem.
+
+A tabela `pedidos` é criada sozinha no primeiro uso. Os pedidos aparecem em `/painel`, que pede usuário e senha. Sem `PAINEL_SENHA` o painel fica desligado; sem banco, o checkout avisa o cliente e oferece mandar o pedido pelo WhatsApp.

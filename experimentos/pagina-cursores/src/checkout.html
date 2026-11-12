@@ -6,7 +6,7 @@
 <title>Checkout — JL Devs</title>
 <meta name="description" content="Escolha o plano do seu site e pague uma única vez pelo Mercado Pago.">
 <meta name="theme-color" content="#000000">
-<link rel="canonical" href="https://jldevs.online/checkout/">
+<link rel="canonical" href="https://jldevs.online/checkout">
 <link rel="icon" type="image/png" href="{{IMG_ICON}}">
 <link rel="apple-touch-icon" href="{{IMG_ICON}}">
 <script>document.documentElement.classList.add('js')</script>
@@ -62,8 +62,25 @@ h1{font-weight:700;font-size:clamp(38px,5.4vw,78px);line-height:.96;letter-spaci
 .total{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
 .total s{color:#4a4e4c}
 .total strong{flex:1 0 100%;text-align:right;font:700 clamp(40px,4vw,56px)/1 var(--font);letter-spacing:-.05em}
-.pay{position:relative;display:flex;align-items:center;justify-content:center;margin:16px 16px 0;min-height:66px;padding:12px 26px;border-radius:999px;background:var(--lime);color:#000;font-weight:700;font-size:19px;letter-spacing:-.02em;text-decoration:none;text-align:center;transition:background-color .2s}
+.pay{position:relative;display:flex;align-items:center;justify-content:center;width:calc(100% - 32px);margin:16px 16px 0;min-height:66px;padding:12px 26px;border:0;border-radius:999px;background:var(--lime);color:#000;font-family:inherit;font-weight:700;font-size:19px;line-height:1.2;letter-spacing:-.02em;text-decoration:none;text-align:center;cursor:pointer;transition:background-color .2s}
+.pay[disabled]{background:#fff;cursor:progress}
 .pay:hover{background:#fff}
+.who{margin-top:clamp(22px,4vh,36px);display:grid;gap:12px}
+.who__row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fld{display:grid;gap:6px;font-size:14.5px;color:rgba(255,255,255,.8)}
+.fld input,.fld textarea{width:100%;padding:14px 16px;border:0;border-radius:14px;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.3);color:#fff;font:400 17px/1.3 var(--font);resize:vertical}
+.fld input::placeholder{color:rgba(255,255,255,.4)}
+.fld input:focus,.fld textarea:focus{outline:0;box-shadow:inset 0 0 0 2px var(--lime)}
+.fld .bad{box-shadow:inset 0 0 0 2px #ff7b7b}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.who__err{min-height:0;font-size:15px;font-weight:700;color:#ff9c9c}
+.who__err:empty{display:none}
+.who__lgpd{font-size:13.5px;color:rgba(255,255,255,.6)}
+.fail{margin:14px 16px 0;padding:16px 18px;border-radius:18px;box-shadow:inset 0 0 0 1.5px #ff7b7b;font-size:15px;line-height:1.45;display:grid;gap:10px}
+.fail[hidden]{display:none}
+.fail a{display:flex;align-items:center;justify-content:center;min-height:46px;padding:8px 16px;border-radius:999px;font-weight:700;text-decoration:none;text-align:center}
+.fail__wa{background:var(--lime);color:#000}
+.fail__pay{color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.5)}
 .note{margin:14px 16px 0;font-size:14.5px;line-height:1.45;color:rgba(255,255,255,.72)}
 .note a{color:#fff;text-underline-offset:3px}
 .chip{position:fixed;left:14px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:50;display:none;align-items:center;gap:9px;padding:10px 15px 11px;border-radius:999px;background:#000;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22);font-size:13.5px;line-height:1;pointer-events:none}
@@ -84,7 +101,9 @@ h1{font-weight:700;font-size:clamp(38px,5.4vw,78px);line-height:.96;letter-spaci
 @media (max-width:860px){
   main{grid-template-columns:1fr;padding-bottom:70px}
   .side{position:static}
-  .slot,.pay,.note{margin-left:0;margin-right:0}
+  .slot,.pay,.note,.fail{margin-left:0;margin-right:0}
+  .pay{width:100%}
+  .who__row{grid-template-columns:1fr}
   .plan__box{padding:16px;gap:4px 12px}
   .chip{display:none!important}
 }
@@ -106,6 +125,16 @@ h1{font-weight:700;font-size:clamp(38px,5.4vw,78px);line-height:.96;letter-spaci
       <label class="plan build from-l"><input type="radio" name="plano" value="medio"><span class="plan__box"><i class="plan__dot"></i><span class="plan__name">Médio <small>25% OFF</small></span><span class="plan__price"><s>R$ 600</s>R$ 450</span><span class="plan__desc">Para quem precisa de mais do que o básico.</span></span></label>
       <label class="plan build from-l"><input type="radio" name="plano" value="completo"><span class="plan__box"><i class="plan__dot"></i><span class="plan__name">Completo <small>R$ 250 OFF</small></span><span class="plan__price"><s>R$ 950</s>R$ 700</span><span class="plan__desc">Com tudo, tudo mesmo. Modificações quantas quiser, quando quiser.</span></span></label>
     </fieldset>
+    <form class="who build from-l" id="f" novalidate>
+      <div class="who__row">
+        <label class="fld"><span>Seu nome</span><input id="fNome" name="nome" type="text" autocomplete="name" maxlength="80" required></label>
+        <label class="fld"><span>Seu WhatsApp</span><input id="fWa" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="(48) 99999-9999" required></label>
+      </div>
+      <label class="fld"><span>O que você precisa? (opcional)</span><textarea id="fMsg" name="mensagem" rows="2" maxlength="600"></textarea></label>
+      <label class="hp" aria-hidden="true">Site<input id="fHp" name="site" type="text" tabindex="-1" autocomplete="off"></label>
+      <p class="who__err" id="fErr" role="alert"></p>
+      <p class="who__lgpd">Usamos seus dados só para falar com você sobre este pedido.</p>
+    </form>
   </section>
   <aside class="side" aria-live="polite">
     <div class="printer" aria-hidden="true"><i></i></div>
@@ -122,8 +151,14 @@ h1{font-weight:700;font-size:clamp(38px,5.4vw,78px);line-height:.96;letter-spaci
       <hr>
       <div class="total"><span>Total, uma vez só</span><s id="rWas">R$ 600</s><strong id="rTotal">R$ 450</strong></div>
     </div></div>
-    <a class="pay build" id="pay" href="https://mpago.la/1w74tUu" rel="noopener">Pagar R$ 450 no Mercado Pago</a>
-    <p class="note build" id="note">Depois de pagar, chame a gente no <a id="wa" href="https://wa.me/5548988058940" target="_blank" rel="noopener noreferrer">WhatsApp (48) 98805-8940</a> para começar o site.</p>
+    <button class="pay build" id="pay" type="submit" form="f">Pagar R$ 450 no Mercado Pago</button>
+    <div class="fail" id="fail" hidden>
+      <p>Não deu para registrar seu pedido agora. Mande seus dados pelo WhatsApp, para a gente saber que é você, e depois pague normalmente.</p>
+      <a class="fail__wa" id="failWa" href="https://wa.me/5548988058940" target="_blank" rel="noopener noreferrer">Enviar pedido pelo WhatsApp</a>
+      <a class="fail__pay" id="failPay" href="https://mpago.la/1w74tUu" rel="noopener">Pagar no Mercado Pago</a>
+    </div>
+    <p class="note build" id="note">Depois do pagamento, a gente chama você no WhatsApp para começar o site. Se preferir, chame no <a id="wa" href="https://wa.me/5548988058940" target="_blank" rel="noopener noreferrer">(48) 98805-8940</a>.</p>
+    <noscript><p class="note">O checkout precisa de JavaScript. Se preferir, chame no WhatsApp (48) 98805-8940.</p></noscript>
   </aside>
 </main>
 <div class="cur cur--jg" id="cJG" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3.2 2.2 20.4 9.6l-7.2 2.3-2.5 7.3z"/></svg><b>JG Dev</b></div>
@@ -145,13 +180,39 @@ h1{font-weight:700;font-size:clamp(38px,5.4vw,78px);line-height:.96;letter-spaci
     $('rOffRow').style.display = off ? '' : 'none'; $('rOff').textContent = '- ' + brl(off, true);
     $('rWas').style.display = off ? '' : 'none'; $('rWas').textContent = brl(p.base);
     $('rTotal').textContent = brl(p.total);
-    $('pay').href = p.link; $('pay').textContent = 'Pagar ' + brl(p.total) + ' no Mercado Pago';
+    cur = key;
+    if (!sending) $('pay').textContent = 'Pagar ' + brl(p.total) + ' no Mercado Pago';
+    $('failPay').href = p.link;
     $('wa').href = 'https://wa.me/5548988058940?text=' + encodeURIComponent('Olá! Paguei o ' + p.name + ' pelo site da JL DEVS e quero começar o projeto.');
   }
   var q = (new URLSearchParams(location.search).get('plano') || '').toLowerCase();
-  var cur = PLANS[q] ? q : 'medio';
+  var cur = PLANS[q] ? q : 'medio', sending = false;
   radios.forEach(function (r) { r.checked = r.value === cur; r.addEventListener('change', function () { show(r.value); poke(); }); });
   show(cur);
+
+  /* ---- antes de pagar: registra quem é o cliente ---- */
+  var form = $('f'), fNome = $('fNome'), fWa = $('fWa'), fMsg = $('fMsg'), fErr = $('fErr');
+  function erro(campo, msg) { fErr.textContent = msg; [fNome, fWa].forEach(function (c) { c.classList.toggle('bad', c === campo); }); if (campo) campo.focus(); }
+  [fNome, fWa].forEach(function (c) { c.addEventListener('input', function () { if (fErr.textContent) erro(null, ''); }); });
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    if (sending) return;
+    var nome = fNome.value.replace(/\s+/g, ' ').trim(), wa = fWa.value.replace(/\D/g, ''), msg = fMsg.value.trim(), p = PLANS[cur], key = cur;
+    if (nome.length < 2) return erro(fNome, 'Escreva seu nome para a gente saber quem está pedindo.');
+    if (wa.length < 10 || wa.length > 13) return erro(fWa, 'Escreva seu WhatsApp com DDD, por exemplo (48) 99999-9999.');
+    erro(null, '');
+    sending = true; $('pay').disabled = true; $('pay').textContent = 'Registrando seu pedido…'; $('fail').hidden = true;
+    var ctl = window.AbortController ? new AbortController() : null, timer = setTimeout(function () { if (ctl) ctl.abort(); }, 8000);
+    fetch('/api/pedido', { method: 'POST', headers: { 'Content-Type': 'application/json' }, signal: ctl ? ctl.signal : undefined,
+      body: JSON.stringify({ nome: nome, whatsapp: wa, plano: key, mensagem: msg, site: $('fHp').value }) })
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('status ' + r.status)); })
+      .then(function (d) { if (!d || !d.ok) throw new Error('recusado'); clearTimeout(timer); $('pay').textContent = 'Abrindo o Mercado Pago…'; location.href = p.link; })
+      .catch(function () {
+        clearTimeout(timer); sending = false; $('pay').disabled = false; $('pay').textContent = 'Tentar de novo';
+        $('failWa').href = 'https://wa.me/5548988058940?text=' + encodeURIComponent('Olá! Sou ' + nome + ' e quero o ' + p.name + ' (' + brl(p.total) + '). Meu WhatsApp: ' + fWa.value.trim() + (msg ? '. ' + msg : ''));
+        $('failPay').href = p.link; $('fail').hidden = false;
+      });
+  });
 
   /* ---- os cursores montam o checkout ---- */
   var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches, narrow = innerWidth < 861;
