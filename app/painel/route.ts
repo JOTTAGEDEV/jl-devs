@@ -12,7 +12,7 @@ const CABECALHOS = {
   "Content-Type": "text/html; charset=utf-8",
   "Cache-Control": "no-store",
   "X-Robots-Tag": "noindex, nofollow",
-  "Referrer-Policy": "no-referrer",
+  "Referrer-Policy": "same-origin",
   "X-Frame-Options": "DENY",
   "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'",
 };
@@ -188,19 +188,25 @@ export async function GET(request: Request): Promise<Response> {
   return html(pagina("Pedidos", `<h1>Pedidos</h1>${resumo}${lista}`));
 }
 
+function mesmaOrigem(request: Request): boolean {
+  /* o navegador marca sozinho de onde veio o formulário; nenhuma página consegue forjar este cabeçalho */
+  const site = request.headers.get("sec-fetch-site");
+  if (site) return site === "same-origin";
+  const origem = request.headers.get("origin");
+  if (!origem || origem === "null") return false;
+  try {
+    return new URL(origem).host === new URL(request.url).host;
+  } catch {
+    return false;
+  }
+}
+
 export async function POST(request: Request): Promise<Response> {
   const barrado = barrar(request);
   if (barrado) return barrado;
 
   /* o navegador manda a senha sozinho em qualquer formulário: só aceita os do próprio painel */
-  const origem = request.headers.get("origin");
-  let mesmaOrigem = false;
-  try {
-    mesmaOrigem = !!origem && new URL(origem).host === new URL(request.url).host;
-  } catch {
-    mesmaOrigem = false;
-  }
-  if (!mesmaOrigem) return html(pagina("Pedido recusado", `<h1>Pedido recusado</h1>`), 403);
+  if (!mesmaOrigem(request)) return html(pagina("Pedido recusado", `<h1>Pedido recusado</h1>`), 403);
 
   try {
     const form = await request.formData();
