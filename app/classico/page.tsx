@@ -190,7 +190,7 @@ export default function Home() {
                   <div className="project-body">
                     <h3>Lucília Residencial</h3>
                     <p>Site de apartamentos por temporada na Praia da Pinheira.</p>
-                    <a href="https://lucilia-residencial-pinheira.vercel.app/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://residenciallucilia.com.br/" target="_blank" rel="noopener noreferrer">
                       Visitar site <ArrowUpRight aria-hidden="true" size={18} />
                       <span className="sr-only">: Lucília Residencial (abre em nova aba)</span>
                     </a>
