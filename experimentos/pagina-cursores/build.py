@@ -25,6 +25,7 @@ def main():
         "IMG_MAPS": data_uri("maps.png", "image/png"),
         "IMG_CUT": data_uri("logo-cut.webp", "image/webp"),
         "IMG_MARK": data_uri("logo-mark.webp", "image/webp"),
+        "IMG_ICON": data_uri("icon.png", "image/png"),
     }
     shaders = {p.stem.upper(): p.read_text(encoding="utf-8") for p in SRC.glob("*.glsl")}
     for name, text in shaders.items():
