@@ -28,8 +28,9 @@
 <link rel="stylesheet" href="/construtora/assets/styles.css">
 <!-- Cena 3D do hero: o módulo baixa/compila adiantado, em prioridade baixa (não disputa banda
      com CSS e fontes); o import() do app.js reaproveita o que já chegou. -->
-<link rel="modulepreload" href="/construtora/assets/vendor/three.module.min.js" fetchpriority="low">
-<link rel="modulepreload" href="/construtora/assets/obra.js" fetchpriority="low">
+<link rel="modulepreload" href="/construtora/assets/obra-video.js">
+<link rel="preload" as="image" href="/construtora/assets/video/obra-poster.jpg" fetchpriority="high" media="(min-aspect-ratio: 87/100)">
+<link rel="preload" as="image" href="/construtora/assets/video/obra-poster-retrato.jpg" fetchpriority="high" media="(max-aspect-ratio: 87/100)">
 
 <script type="application/ld+json">
 {

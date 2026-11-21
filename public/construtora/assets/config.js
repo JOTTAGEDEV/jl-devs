@@ -23,8 +23,12 @@
                    Para Unsplash, basta trocar o ID em img("..."). Para arquivo
                    próprio, use o caminho direto: src: "/construtora/assets/foto.jpg".
                    Todo `alt` descreve o que se vê na imagem — atualize junto.
-   7. OBRA 3D .... `obra.modo: "3d"` usa a cena interativa. Com renders reais da
-                   obra, use modo "frames" e liste as imagens em `obra.frames`.
+   7. OBRA ....... `obra.modo: "video"` (padrão) avança o vídeo renderizado no Blender
+                   com a rolagem: `obra.video.src` (desktop), `srcMobile` (telas menores),
+                   `srcRetrato`/`posterRetrato` (celular em pé, enquadramento vertical),
+                   `poster` (primeiro quadro) e `foco` (ponto do vídeo que fica no centro
+                   quando a tela recorta as laterais). `"3d"` volta para a cena interativa;
+                   `"frames"` usa uma lista de imagens em `obra.frames`.
    ========================================================================== */
 (function () {
   "use strict";
@@ -292,6 +296,17 @@
     },
 
     // "3d" = cena interativa. "frames" = sequência de imagens listada em `frames` (renders reais).
-    obra: { modo: "3d", frames: [] }
+    obra: {
+      modo: "video",
+      video: {
+        src: "/construtora/assets/video/obra-1080.mp4",
+        srcMobile: "/construtora/assets/video/obra-720.mp4",
+        srcRetrato: "/construtora/assets/video/obra-retrato.mp4",
+        poster: "/construtora/assets/video/obra-poster.jpg",
+        posterRetrato: "/construtora/assets/video/obra-poster-retrato.jpg",
+        foco: [0.62, 0.5]
+      },
+      frames: []
+    }
   };
 })();

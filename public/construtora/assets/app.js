@@ -599,8 +599,10 @@
     const canvas = $('#obra-canvas');
     if (!canvas || !heroEl) return;
     let mod;
+    const modo = get(SITE, 'obra.modo');
     try {
-      mod = await import('/construtora/assets/obra.js');
+      // modo "video": sequência renderizada (sem three.js); "3d"/"frames": cena do obra.js
+      mod = await import(modo === 'video' ? '/construtora/assets/obra-video.js' : '/construtora/assets/obra.js');
     } catch (e) {
       console.warn('[obra] módulo indisponível — mantendo poster CSS.', e);
       return;
@@ -613,7 +615,8 @@
       obra = mod.createObra(canvas, {
         quality: QUALITY,
         reducedMotion: mqReduced.matches,
-        frames: get(SITE, 'obra.modo') === 'frames' ? get(SITE, 'obra.frames', []) : undefined
+        frames: modo === 'frames' ? get(SITE, 'obra.frames', []) : undefined,
+        video: modo === 'video' ? get(SITE, 'obra.video') : undefined
       });
     } catch (e) {
       console.warn('[obra] falha ao criar a cena — mantendo poster CSS.', e);
